@@ -314,3 +314,16 @@ footer {
   transform: scale(1.2) rotate(90deg);
 }
 
+/* FIX – dugmad u .project da se NE preklapaju */
+.project button {
+  position: static !important;
+  display: block;
+  margin: 0;
+  width: fit-content;
+}
+
+/* Ako ima više dugmadi – jedan ispod drugog */
+.project button + button {
+  margin-top: 10px;
+}
+
