@@ -153,6 +153,36 @@ h2 {
   color: #fff;
   transform: scale(1.05);
 }
+#soft-skills {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#soft-skills h2 {
+  margin-bottom: 25px;
+  color: var(--secondary);
+}
+
+#soft-skills .skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+#soft-skills .skill {
+  background: var(--accent);
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: .3s;
+}
+
+#soft-skills .skill:hover {
+  transform: scale(1.06);
+  background: var(--primary);
+  color: #fff;
+}
 
 /* PROJECTS */
 .project {
@@ -326,4 +356,5 @@ footer {
 .project button + button {
   margin-top: 10px;
 }
+
 
