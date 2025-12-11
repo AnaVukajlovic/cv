@@ -217,20 +217,21 @@
         <button onclick="window.open('https://github.com/AnaVukajlovic/Salon','_blank')">View on GitHub</button>
       </div>
 
-      <div class="project">
-        <h3>🕊️ SrbijaManastiri – Desktop Application</h3>
-        <p>⛪ A C# desktop application that presents Orthodox monasteries across Serbia in an educational and interactive way.<br>
-        💻 Developed using WinForms and SQL Server (LocalDB) for data storage.<br>
-        🕍 Displays detailed monastery information including images, history, region, and eparchy.<br>
-        👑 Includes modules for ktitors, stories about Saint Sava, religious calendar, and an educational quiz.<br>
-        💬 Enables user interaction through comments, questions, and reviews.<br>
-        🔐 Implements user roles (Admin & User) with full CRUD operations.<br>
-        🚀 Designed to be extendable for future upgrades such as Google Maps integration, PDF export, and Android version.<br>
-        🛠️ Technologies: C# (.NET Framework, WinForms), SQL Server (LocalDB), ADO.NET, GDI+, Visual Studio</p>
-        <button class="project-btn gallery-btn">👁️ See Screenshots</button>
-        <button 
-        <button onclick="window.open('https://github.com/AnaVukajlovic/SrbijaManastiri','_blank')">View on GitHub</button>
-         <!-- GALERIJA - sakrivena po default-u -->
+     <div class="project"> 
+  <h3>🕊️ SrbijaManastiri – Desktop Application</h3>
+  <p>⛪ A C# desktop application that presents Orthodox monasteries across Serbia in an educational and interactive way.<br>
+  💻 Developed using WinForms and SQL Server (LocalDB) for data storage.<br>
+  🕍 Displays detailed monastery information including images, history, region, and eparchy.<br>
+  👑 Includes modules for ktitors, stories about Saint Sava, religious calendar, and an educational quiz.<br>
+  💬 Enables user interaction through comments, questions, and reviews.<br>
+  🔐 Implements user roles (Admin & User) with full CRUD operations.<br>
+  🚀 Designed to be extendable for future upgrades such as Google Maps integration, PDF export, and Android version.<br>
+  🛠️ Technologies: C# (.NET Framework, WinForms), SQL Server (LocalDB), ADO.NET, GDI+, Visual Studio</p>
+  
+  <button class="project-btn gallery-btn">👁️ See Screenshots</button>
+  <button class="project-btn" onclick="window.open('https://github.com/AnaVukajlovic/SrbijaManastiri','_blank')">View on GitHub</button>
+  
+  <!-- GALERIJA - sakrivena po default-u -->
   <div class="gallery-modal" id="srbija-gallery">
     <div class="gallery-overlay">
       <button class="close-gallery">✕</button>
@@ -240,32 +241,124 @@
       <div class="gallery-grid">
         <label class="gallery-item">
           <input type="radio" name="admin-gal" checked>
-          <img src="Images/srbija-admin1.jpg" alt="Admin Dashboard" loading="lazy">
-          <span>Dashboard pregled</span>
+          <img src="Images/admin_logovanje.PNG" alt="Admin login" loading="lazy">
+          <span>🔑 Admin logovanje</span>
         </label>
         <label class="gallery-item">
           <input type="radio" name="admin-gal">
-          <img src="Images/srbija-admin2.jpg" alt="Korisnici" loading="lazy">
-          <span>Upravljanje korisnicima</span>
+          <img src="Images/додавање приче админ.png" alt="Dodavanje price" loading="lazy">
+          <span>✨ Dodavanje priče</span>
+        </label>
+        <label class="gallery-item">
+          <input type="radio" name="admin-gal">
+          <img src="Images/приче измена админ.png" alt="Izmena price" loading="lazy">
+          <span>✏️ Izmena priče</span>
+        </label>
+        <label class="gallery-item">
+          <input type="radio" name="admin-gal">
+          <img src="Images/брисање адмнин приче.PNG" alt="Brisanje price" loading="lazy">
+          <span>🗑️ Brisanje priče</span>
+        </label>
+        <label class="gallery-item">
+          <input type="radio" name="admin-gal">
+          <img src="Images/рецензије админ.png" alt="Recenzije admin" loading="lazy">
+          <span>⭐ Upravljanje recenzijama</span>
+        </label>
+        <label class="gallery-item">
+          <input type="radio" name="admin-gal">
+          <img src="Images/питања админ.png" alt="Pitanja admin" loading="lazy">
+          <span>❓ Odgovori na pitanja</span>
         </label>
       </div>
       
-      <!-- USER SEKCIJA -->
+      <!-- KORISNIČKI SEKCIJA -->
       <h4>👤 Korisnički Interfejs</h4>
       <div class="gallery-grid">
         <label class="gallery-item">
           <input type="radio" name="user-gal" checked>
-          <img src="Images/srbija-user1.jpg" alt="Manastiri lista" loading="lazy">
-          <span>Lista manastira</span>
+          <img src="Images/регистрација.png" alt="Registracija" loading="lazy">
+          <span>📝 Registracija korisnika</span>
         </label>
         <label class="gallery-item">
           <input type="radio" name="user-gal">
-          <img src="Images/srbija-user2.jpg" alt="Detalji" loading="lazy">
-          <span>Detalji manastira</span>
+          <img src="Images/мени.png" alt="Glavni meni" loading="lazy">
+          <span>📋 Glavni meni</span>
+        </label>
+        <label class="gallery-item">
+          <input type="radio" name="user-gal">
+          <img src="Images/manastiri.png" alt="Lista manastira" loading="lazy">
+          <span>⛪ Lista manastira</span>
+        </label>
+        <label class="gallery-item">
+          <input type="radio" name="user-gal">
+          <img src="Images/studenica.png" alt="Detalji manastira" loading="lazy">
+          <span>🏛️ Detalji Studenice</span>
+        </label>
+      </div>
+
+      <!-- EDUKATIVNI SADRŽAJ -->
+      <h4>📚 Edukativni Moduli</h4>
+      <div class="gallery-grid">
+        <label class="gallery-item">
+          <input type="radio" name="edu-gal" checked>
+          <img src="Images/ктитори.png" alt="Ktitori" loading="lazy">
+          <span>👑 Ktitori manastira</span>
+        </label>
+        <label class="gallery-item">
+          <input type="radio" name="edu-gal">
+          <img src="Images/календар.png" alt="Kalendar" loading="lazy">
+          <span>⛪ Pravoslavni kalendar</span>
+        </label>
+        <label class="gallery-item">
+          <input type="radio" name="edu-gal">
+          <img src="Images/васкрс.png" alt="Vaskrs" loading="lazy">
+          <span>✝️ Vaskrs</span>
+        </label>
+      </div>
+
+      <!-- KVI Z -->
+      <h4>❓ Kviz</h4>
+      <div class="gallery-grid">
+        <label class="gallery-item">
+          <input type="radio" name="quiz-gal" checked>
+          <img src="Images/квиѕ тацан одговор.png" alt="Tacan odgovor" loading="lazy">
+          <span>✅ Tačan odgovor</span>
+        </label>
+        <label class="gallery-item">
+          <input type="radio" name="quiz-gal">
+          <img src="Images/квиѕ нетачан одговор.png" alt="Netacan odgovor" loading="lazy">
+          <span>❌ Ne tačan odgovor</span>
+        </label>
+      </div>
+
+      <!-- INTERAKCIJA + MAPE + OSTALO (skraćeno za prostor) -->
+      <h4>💬 Interakcija & Ostalo</h4>
+      <div class="gallery-grid">
+        <label class="gallery-item">
+          <input type="radio" name="other-gal" checked>
+          <img src="Images/feed.png" alt="Feed" loading="lazy">
+          <span>📱 Glavni feed</span>
+        </label>
+        <label class="gallery-item">
+          <input type="radio" name="other-gal">
+          <img src="Images/комentarisi feed.png" alt="Komentarisi" loading="lazy">
+          <span>💬 Komentari na feed-u</span>
+        </label>
+        <label class="gallery-item">
+          <input type="radio" name="other-gal">
+          <img src="Images/мапа.png" alt="Mapa" loading="lazy">
+          <span>🗺️ Lokalna mapa</span>
+        </label>
+        <label class="gallery-item">
+          <input type="radio" name="other-gal">
+          <img src="Images/функција рпетаѕиванја.png" alt="Reset" loading="lazy">
+          <span>🔄 Reset lozinke</span>
         </label>
       </div>
     </div>
-      </div>
+  </div>
+</div>
+
 
       <div class="project">
  <h3>🐾✨ IoT-based Robot Dog</h3>
@@ -301,15 +394,10 @@
           🛠️ Technologies: ASP.NET Core MVC, C#, Razor, HTML, CSS, Bootstrap
         </p>
 
-        <!-- Ako okačiš na GitHub i/ili imaš live demo, ovde dodaj linkove -->
+       
         <button class="project-btn" onclick="window.open('https://github.com/AnaVukajlovic/Manastiri---web-app','_blank')">
           View on GitHub
         </button>
-        <!--
-        <button class="project-btn" onclick="window.open('https://tvoj-live-link-ovde','_blank')">
-          View Live Site
-        </button>
-        -->
       </div>
 
 
@@ -458,6 +546,7 @@
 
 </body>
 </html>
+
 
 
 
