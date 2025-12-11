@@ -227,8 +227,44 @@
         🔐 Implements user roles (Admin & User) with full CRUD operations.<br>
         🚀 Designed to be extendable for future upgrades such as Google Maps integration, PDF export, and Android version.<br>
         🛠️ Technologies: C# (.NET Framework, WinForms), SQL Server (LocalDB), ADO.NET, GDI+, Visual Studio</p>
-
+        <button class="project-btn gallery-btn">👁️ See Screenshots</button>
+        <button 
         <button onclick="window.open('https://github.com/AnaVukajlovic/SrbijaManastiri','_blank')">View on GitHub</button>
+         <!-- GALERIJA - sakrivena po default-u -->
+  <div class="gallery-modal" id="srbija-gallery">
+    <div class="gallery-overlay">
+      <button class="close-gallery">✕</button>
+      
+      <!-- ADMIN SEKCIJA -->
+      <h4>🔐 Admin Panel</h4>
+      <div class="gallery-grid">
+        <label class="gallery-item">
+          <input type="radio" name="admin-gal" checked>
+          <img src="Images/srbija-admin1.jpg" alt="Admin Dashboard" loading="lazy">
+          <span>Dashboard pregled</span>
+        </label>
+        <label class="gallery-item">
+          <input type="radio" name="admin-gal">
+          <img src="Images/srbija-admin2.jpg" alt="Korisnici" loading="lazy">
+          <span>Upravljanje korisnicima</span>
+        </label>
+      </div>
+      
+      <!-- USER SEKCIJA -->
+      <h4>👤 Korisnički Interfejs</h4>
+      <div class="gallery-grid">
+        <label class="gallery-item">
+          <input type="radio" name="user-gal" checked>
+          <img src="Images/srbija-user1.jpg" alt="Manastiri lista" loading="lazy">
+          <span>Lista manastira</span>
+        </label>
+        <label class="gallery-item">
+          <input type="radio" name="user-gal">
+          <img src="Images/srbija-user2.jpg" alt="Detalji" loading="lazy">
+          <span>Detalji manastira</span>
+        </label>
+      </div>
+    </div>
       </div>
 
       <div class="project">
@@ -422,6 +458,7 @@
 
 </body>
 </html>
+
 
 
 
