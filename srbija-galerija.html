@@ -178,23 +178,33 @@
   const images = document.querySelectorAll(".gallery-item img");
   const closeBtn = document.querySelector(".close");
 
+  function openLightbox(img) {
+    lightbox.style.display = "flex";
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeLightbox() {
+    lightbox.style.display = "none";
+    document.body.style.overflow = "";
+  }
+
   images.forEach(img => {
-    img.addEventListener("click", () => {
-      lightbox.style.display = "flex";
-      lightboxImg.src = img.src;
-    });
+    img.addEventListener("click", () => openLightbox(img));
   });
 
-  closeBtn.addEventListener("click", () => {
-    lightbox.style.display = "none";
-  });
+  closeBtn.addEventListener("click", closeLightbox);
 
   lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox) {
-      lightbox.style.display = "none";
-    }
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeLightbox();
   });
 </script>
+
 
 </body>
 </html>
