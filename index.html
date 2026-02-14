@@ -282,41 +282,68 @@
       </button>
     </div>
 
-    <div class="project">
-      <h3>IoT robot pas – računarски vid i prepoznavanje lica</h3>
-      <p>
-        IoT projekat koji kombinuje računarски vid i embedded sisteme za interaktivno ponašanje robota.
-        Sistem koristi detekciju/prepoznavanje lica i senzore za reakciju na prisustvo vlasnika, uz mogućnost upravljanja na daljinu.
-        <br><br>
-        Tehnologije: Raspberry Pi, Python, Computer Vision, IoT/Embedded.
-      </p>
-    </div>
+   <div class="project">
+  <h3>IoT robot pas</h3>
+  <p>
+      Projekat razvoja interaktivnog IoT robota zasnovanog na Raspberry Pi platformi,
+      sa implementacijom detekcije i prepoznavanja lica u realnom vremenu.
+      Sistem je osmišljen da prepozna vlasnika i reaguje na njegovo prisustvo
+      kroz unapred definisane komande i pokrete.
+      <br><br>
+      Implementirano: obrada video signala sa kamere, detekcija i prepoznavanje lica,
+      komunikacija između hardverskih komponenti, izvršavanje Python skripti
+      za kontrolu ponašanja robota, kao i osnovna IoT komunikacija.
+      <br><br>
+      Tehnologije: Raspberry Pi, Python,  IoT koncepti, embedded sistemi.
+    </p>
+  </div>
+
+
+  <div class="project">
+    <h3>Sistem za upravljanje rekreativnim tenisom</h3>
+    <p>
+      Web aplikacija razvijena kao timski projekat, namenjena organizaciji i
+      upravljanju rekreativnim teniskim aktivnostima.
+      Sistem omogućava jednostavno zakazivanje mečeva, evidenciju rezultata
+      i praćenje rang liste igrača.
+      <br><br>
+      Implementirano: korisnička registracija i autentifikacija,
+      upravljanje sesijama, unos i prikaz rezultata,
+      administracija korisničkih profila,
+      kao i organizacija mečeva kroz MVC arhitekturu radi jasne podele odgovornosti.
+      <br><br>
+      Tehnologije: PHP (MVC arhitektura), JavaScript, MySQL, rad sa relacijama u bazi podataka.
+    </p>
+  </div>
+
 
     <div class="project">
-      <h3>Sistem za upravljanje rekreativnim tenisom</h3>
-      <p>
-        Timski razvijena web aplikacija za zakazivanje mečeva, vođenje rezultata i organizaciju klupskih aktivnosti.
-        Rešenje je organizovano kroz MVC arhitekturu radi jasne strukture i lakšeg održavanja.
-        <br><br>
-        Implementirano: registracija i upravljanje profilom, autentifikacija/sesije, zakazivanje mečeva, evidencija rezultata i rang lista.
-        <br><br>
-        Tehnologije: PHP (MVC), JavaScript, MySQL.
-      </p>
-    </div>
+  <h3>NemanjiciWebApp – Laravel + HTML/CSS/JavaScript + Ollama LLM</h3>
+  <p>
+    Web aplikacija posvećena istoriji dinastije Nemanjića i srpskim manastirima,
+    razvijena kao full-stack projekat sa Laravel backend arhitekturom.
+    Sistem omogućava prikaz vladara, hronološku organizaciju sadržaja,
+    detaljne stranice sa istorijskim podacima, kao i pretragu i filtriranje manastira.
+    <br><br>
+    Implementirana je relacijska baza podataka sa modelima i migracijama,
+    REST API komunikacija između backend i frontend sloja,
+    kao i modularna struktura aplikacije (MVC arhitektura).
+    <br><br>
+    Poseban deo projekta predstavlja integracija lokalnog LLM modela
+    putem Ollama servisa, koji omogućava AI pretragu i generisanje odgovora
+    na osnovu postojećih podataka aplikacije.
+    Fokus je na kontroli odgovora modela i smanjenju halucinacija kroz
+    strukturiran prompt dizajn i validaciju podataka.
+    <br><br>
+    Tehnologije: Laravel (PHP), Blade, HTML, CSS, JavaScript, MySQL/SQLite,
+    REST API, Ollama LLM integracija.
+  </p>
 
-    <div class="project">
-      <h3>NemanjiciWebApp – ASP.NET Core MVC aplikacija</h3>
-      <p>
-        Web aplikacija posvećena istoriji dinastije Nemanjića, sa hronološkim prikazom vladara i detaljnim stranicama.
-        Uključuje vizuelno porodično stablo (HTML/CSS) i interaktivni prikaz manastira sa pretragom i sortiranjem.
-        <br><br>
-        Tehnologije: ASP.NET Core MVC, C#, Razor, HTML, CSS, Bootstrap.
-      </p>
+  <button class="project-btn" onclick="window.open('https://github.com/AnaVukajlovic/Manastiri---web-app','_blank')">
+    GitHub repozitorijum
+  </button>
+</div>
 
-      <button class="project-btn" onclick="window.open('https://github.com/AnaVukajlovic/Manastiri---web-app','_blank')">
-        GitHub repozitorijum
-      </button>
-    </div>
 
   </div>
 </section>
@@ -375,5 +402,6 @@
 
 </body>
 </html>
+
 
 
