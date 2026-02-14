@@ -203,9 +203,10 @@ h2 {
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 15px;                
   transition: 0.3s ease;
 }
+
 .project:hover {
   transform: translateY(-6px);
   box-shadow: 0 15px 30px rgba(0,0,0,0.12);
@@ -308,3 +309,4 @@ footer {
   /* ✅ FIX: 1 kolona na mobilnom (bez duplog @media bloka) */
   .projects-grid { grid-template-columns: 1fr; }
 }
+
