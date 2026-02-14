@@ -310,8 +310,93 @@ footer {
   .hero-content { flex-direction: column; text-align: center; }
   .hero-image img { width: 180px; height: 180px; margin: auto; }
 
-  /* ✅ FIX: 1 kolona na mobilnom (bez duplog @media bloka) */
   .projects-grid { grid-template-columns: 1fr; }
 }
 
+/* Projekti: poravnanje sadržaja i dugmadi */
+.project {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
 
+/* Ovaj deo drži dugmad dole (ako postoje) */
+.project .project-btn:first-of-type {
+  margin-top: auto;
+}
+
+
+/* IoT – objave u medijima (accordion, mobile-friendly) */
+.iot-media{
+  margin-top: 10px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(124,58,237,0.12);
+}
+
+.iot-media h4{
+  margin: 0 0 10px;
+  font-size: 0.95rem;
+  color: var(--secondary);
+  font-weight: 700;
+}
+
+.media-item{
+  background: #fff;
+  border: 1px solid rgba(124,58,237,0.10);
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(31,41,55,0.06);
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.media-item summary{
+  list-style: none;
+  cursor: pointer;
+  padding: 12px 14px;
+  font-weight: 700;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.media-item summary::-webkit-details-marker{ display: none; }
+
+.media-item summary::after{
+  content: "▾";
+  transition: transform 0.25s;
+  opacity: 0.9;
+}
+
+.media-item[open] summary::after{
+  transform: rotate(180deg);
+}
+
+.media-body{
+  padding: 0 14px 14px;
+  color: var(--text-dark);
+}
+
+.media-body p{
+  margin: 8px 0 12px;
+  line-height: 1.6;
+  opacity: 0.92;
+}
+
+.media-btn{
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.25s;
+  box-shadow: 0 10px 25px rgba(124,58,237,0.20);
+}
+
+.media-btn:hover{
+  background: var(--secondary);
+  transform: translateY(-2px);
+}
