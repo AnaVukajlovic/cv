@@ -18,7 +18,10 @@ body {
   color: var(--text-dark);
   scroll-behavior: smooth;
 }
-
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* visina navbara + malo lufta */
+}
 /* NAVBAR */
 nav {
   position: fixed;
@@ -281,3 +284,4 @@ footer {
   .hero-content { flex-direction: column; text-align: center; }
   .hero-image img { width: 180px; height: 180px; margin: auto; }
 }
+
