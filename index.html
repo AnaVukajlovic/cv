@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ana Vukajlović Portfolio</title>
+  <title>Ana Vukajlović | Portfolio</title>
 
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet"
@@ -16,7 +16,7 @@
     <div class="nav-container">
       <div class="logo">Ana Vukajlović</div>
 
-      <div class="menu-toggle" id="mobile-menu">
+      <div class="menu-toggle" id="mobile-menu" aria-label="Otvori meni" aria-expanded="false">
         <i class="fa fa-bars"></i>
       </div>
 
@@ -37,9 +37,20 @@
     <div class="hero-content">
       <div class="hero-text">
         <h1>Ana Vukajlović</h1>
-        <h3>Diplomirani inženjer informacionih tehnologija
-          <br>Student master akademskih studija – studijski program Informacione tehnologije (FTN Čačak)
+        <h2>Junior Software Developer</h2>
+        <h3>
+          Diplomirani inženjer informacionih tehnologija<br>
+          Student master akademskih studija – studijski program Informacione tehnologije (FTN Čačak)
         </h3>
+        <p>
+          Fokusirana sam na razvoj web i desktop aplikacija, sa posebnim interesovanjem
+          za frontend, UX/UI dizajn i full-stack projekte zasnovane na realnim problemima.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="cv-button">Pogledaj projekte</a>
+          <a href="CV/Ana Vukajlović CV.pdf" download class="cv-button secondary-btn">Preuzmi CV</a>
+        </div>
       </div>
 
       <div class="hero-image">
@@ -48,15 +59,67 @@
     </div>
   </header>
 
+  <!-- FEATURED PROJECTS -->
+  <section id="featured-projects">
+    <h2>Izdvojeni projekti</h2>
+
+    <div class="projects-grid">
+
+      <div class="project featured-project">
+        <h3>SrbijaManastiri – Desktop aplikacija (C#)</h3>
+        <p>
+          Edukativna desktop aplikacija za prikaz pravoslavnih manastira u Srbiji,
+          razvijena u WinForms okruženju sa bazom podataka i administracijom sadržaja.
+        </p>
+
+        <ul class="project-highlights">
+          <li>Autentifikacija i korisničke uloge (Admin/Korisnik)</li>
+          <li>CRUD operacije nad sadržajem aplikacije</li>
+          <li>Rad sa bazom kroz ADO.NET i SQL Server LocalDB</li>
+          <li>Galerija, priče, kalendar, kviz i pretraga sadržaja</li>
+        </ul>
+
+        <p><strong>Tehnologije:</strong> C#, .NET Framework, WinForms, SQL Server (LocalDB), ADO.NET, Visual Studio</p>
+
+        <div class="project-actions">
+          <button class="project-btn" onclick="window.open('srbija-galerija.html','_blank')">
+            Pregled ekrana
+          </button>
+          <button class="project-btn" onclick="window.open('https://github.com/AnaVukajlovic/SrbijaManastiri','_blank')">
+            GitHub repozitorijum
+          </button>
+        </div>
+      </div>
+
+      <div class="project featured-project">
+        <h3>NemanjiciWebApp – Laravel + HTML/CSS/JavaScript + Ollama LLM</h3>
+        <p>
+          Full-stack web aplikacija posvećena istoriji dinastije Nemanjića i srpskim manastirima,
+          sa fokusom na organizaciju sadržaja, pretragu i AI podršku nad internim podacima sistema.
+        </p>
+
+        <ul class="project-highlights">
+          <li>Laravel backend arhitektura i MVC organizacija</li>
+          <li>Relacijska baza podataka, modeli i migracije</li>
+          <li>REST API komunikacija između backend i frontend sloja</li>
+          <li>Integracija lokalnog Ollama LLM modela za AI odgovore</li>
+        </ul>
+
+        <p><strong>Tehnologije:</strong> Laravel, Blade, HTML, CSS, JavaScript, MySQL/SQLite, REST API, Ollama</p>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ABOUT -->
   <section id="about">
     <h2>O meni</h2>
     <p>
-      Diplomirani inženjer IT sa interesovanjem za frontend razvoj, UX/UI dizajn
-      i razvoj aplikacija. Imam iskustvo u izradi responzivnih web aplikacija i sajtova korišćenjem savremenih alata
-      i tehnologija, kao i u razvoju C# desktop aplikacija i Android aplikacija u Java/Kotlin okruženju.
-      Koristim Figma alat za dizajniranje intuitivnih korisničkih interfejsa.
-      Kontinuirano radim na ličnim projektima radi unapređenja tehničkih veština i profesionalnog razvoja.
+      Diplomirani inženjer informacionih tehnologija sa interesovanjem za frontend razvoj,
+      UX/UI dizajn i razvoj aplikacija. Imam iskustvo u izradi responzivnih web aplikacija i sajtova
+      korišćenjem savremenih alata i tehnologija, kao i u razvoju C# desktop aplikacija i Android
+      aplikacija u Java/Kotlin okruženju. Koristim Figma alat za dizajniranje intuitivnih korisničkih
+      interfejsa i kontinuirano radim na ličnim projektima radi unapređenja tehničkih veština i profesionalnog razvoja.
     </p>
   </section>
 
@@ -64,7 +127,6 @@
   <section id="resume">
     <h2>CV / Biografija</h2>
     <p>Možete preuzeti moj CV ovde:</p>
-    <br>
     <a href="CV/Ana Vukajlović CV.pdf" download class="cv-button">📄 Preuzmi CV</a>
   </section>
 
@@ -145,7 +207,6 @@
         <div class="skill">Srpski – maternji</div>
       </div>
     </div>
-
   </section>
 
   <!-- SOFT SKILLS -->
@@ -163,224 +224,213 @@
     </div>
   </section>
 
-  
-<!-- KURSEVI -->
-<section id="courses">
-  <h2>Kursevi i sertifikati</h2>
+  <!-- KURSEVI -->
+  <section id="courses">
+    <h2>Kursevi i sertifikati</h2>
 
-  <div class="courses-list">
+    <div class="courses-list">
 
-    <div class="course">
-      <i class="fa-solid fa-code course-icon"></i>
-      <h3>Frontend Development Libraries (freeCodeCamp)</h3>
-      <p>Status: <strong>U toku</strong></p>
-      <p>
-        <a href="https://www.freecodecamp.org/learn/front-end-development-libraries" target="_blank">
-          Pogledaj kurs
-        </a>
-      </p>
+      <div class="course">
+        <i class="fa-solid fa-code course-icon"></i>
+        <h3>Frontend Development Libraries (freeCodeCamp)</h3>
+        <p>Status: <strong>U toku</strong></p>
+        <p>
+          <a href="https://www.freecodecamp.org/learn/front-end-development-libraries" target="_blank" rel="noopener">
+            Pogledaj kurs
+          </a>
+        </p>
+      </div>
+
+      <div class="course">
+        <i class="fa-brands fa-microsoft course-icon"></i>
+        <h3>C# (Microsoft / freeCodeCamp)</h3>
+        <p>Status: <strong>U toku</strong></p>
+        <p>
+          <a href="https://www.freecodecamp.org/news/free-microsoft-c-sharp-certification/" target="_blank" rel="noopener">
+            Pogledaj kurs
+          </a>
+        </p>
+      </div>
+
+      <div class="course">
+        <i class="fa-brands fa-java course-icon"></i>
+        <h3>Osnove programiranja u Javi (freeCodeCamp)</h3>
+        <p>Status: <strong>U toku</strong></p>
+        <p>
+          <a href="https://www.freecodecamp.org/news/learn-the-basics-of-java-programming/" target="_blank" rel="noopener">
+            Pogledaj kurs
+          </a>
+        </p>
+      </div>
+
+      <div class="course">
+        <i class="fa-solid fa-code course-icon"></i>
+        <h3>Frontend Development – IT N&amp;B Group</h3>
+        <p>Status: <strong>Završen</strong></p>
+        <p>
+          <a href="https://www.instagram.com/it_n_b" target="_blank" rel="noopener">Detalji kursa</a>
+          &nbsp;|&nbsp;
+          <a href="CV/Ana_Vukajlovic_Sertifikat.pdf" target="_blank" rel="noopener">
+            Sertifikat
+          </a>
+        </p>
+      </div>
+
     </div>
-
-    <div class="course">
-      <i class="fa-brands fa-microsoft course-icon"></i>
-      <h3>C# (Microsoft / freeCodeCamp)</h3>
-      <p>Status: <strong>U toku</strong></p>
-      <p>
-        <a href="https://www.freecodecamp.org/news/free-microsoft-c-sharp-certification/" target="_blank">
-          Pogledaj kurs
-        </a>
-      </p>
-    </div>
-
-    <div class="course">
-      <i class="fa-brands fa-java course-icon"></i>
-      <h3>Osnove programiranja u Javi (freeCodeCamp)</h3>
-      <p>Status: <strong>U toku</strong></p>
-      <p>
-        <a href="https://www.freecodecamp.org/news/learn-the-basics-of-java-programming/" target="_blank">
-          Pogledaj kurs
-        </a>
-      </p>
-    </div>
-
-    <div class="course">
-      <i class="fa-solid fa-code course-icon"></i>
-      <h3>Frontend Development – IT N&B Group</h3>
-      <p>Status: <strong>Završen</strong></p>
-      <p>
-        <a href="https://www.instagram.com/it_n_b" target="_blank">Detalji kursa</a>
-        &nbsp;|&nbsp;
-        <a href="CV/Ana_Vukajlovic_Sertifikat.pdf" target="_blank" rel="noopener">
-          Sertifikat
-        </a>
-      </p>
-    </div>
-
-  </div>
-</section>
+  </section>
 
   <!-- PROJEKTI -->
-<section id="projects">
-  <h2>Projekti</h2>
+  <section id="projects">
+    <h2>Ostali projekti</h2>
 
-  <div class="projects-grid">
+    <div class="projects-grid">
 
-    <div class="project">
-      <h3>Recepti – Web aplikacija za posna jela</h3>
-      <p>
-        Web aplikacija namenjena jednostavnom pronalaženju i organizaciji recepata za period posta.
-        Fokus je na preglednoj navigaciji, responzivnom dizajnu i brzom pristupu sadržaju.
-        <br><br>
-        Funkcionalnosti: pretraga i filtriranje recepata, kategorije jela, kalendar posta, nedeljni planer obroka, kontakt forma.
-        <br><br>
-        Tehnologije: HTML, CSS, JavaScript, Bootstrap.
-      </p>
+      <div class="project">
+        <h3>Recepti – Web aplikacija za posna jela</h3>
+        <p>
+          Web aplikacija namenjena jednostavnom pronalaženju i organizaciji recepata za period posta.
+          Fokus je na preglednoj navigaciji, responzivnom dizajnu i brzom pristupu sadržaju.
+        </p>
+        <ul class="project-highlights">
+          <li>Pretraga i filtriranje recepata</li>
+          <li>Kategorije jela i kalendar posta</li>
+          <li>Nedeljni planer obroka</li>
+          <li>Kontakt forma</li>
+        </ul>
+        <p><strong>Tehnologije:</strong> HTML, CSS, JavaScript, Bootstrap</p>
 
-      <button class="project-btn" onclick="window.open('https://anavukajlovic.github.io/Recepti/','_blank')">
-        Prikaži aplikaciju
-      </button>
-      <button class="project-btn" onclick="window.open('https://github.com/AnaVukajlovic/Recepti','_blank')">
-        GitHub repozitorijum
-      </button>
+        <div class="project-actions">
+          <button class="project-btn" onclick="window.open('https://anavukajlovic.github.io/Recepti/','_blank')">
+            Prikaži aplikaciju
+          </button>
+          <button class="project-btn" onclick="window.open('https://github.com/AnaVukajlovic/Recepti','_blank')">
+            GitHub repozitorijum
+          </button>
+        </div>
+      </div>
+
+      <div class="project">
+        <h3>Beauty &amp; Style – Web aplikacija za zakazivanje termina</h3>
+        <p>
+          Responzivna web aplikacija za pregled usluga i zakazivanje kozmetičkih tretmana,
+          sa fokusom na čist UI, jasnu strukturu i dobro korisničko iskustvo.
+        </p>
+        <ul class="project-highlights">
+          <li>Prikaz usluga i cenovnika</li>
+          <li>Kontakt forma i informativne sekcije</li>
+          <li>Prilagođen prikaz za mobilne uređaje</li>
+        </ul>
+        <p><strong>Tehnologije:</strong> HTML, CSS, JavaScript</p>
+
+        <div class="project-actions">
+          <button class="project-btn" onclick="window.open('https://anavukajlovic.github.io/Salon/','_blank')">
+            Prikaži aplikaciju
+          </button>
+          <button class="project-btn" onclick="window.open('https://github.com/AnaVukajlovic/Salon','_blank')">
+            GitHub repozitorijum
+          </button>
+        </div>
+      </div>
+
+      <div class="project">
+        <h3>IoT robot pas</h3>
+        <p>
+          Projekat razvoja interaktivnog IoT robota zasnovanog na Raspberry Pi platformi,
+          sa implementacijom detekcije i prepoznavanja lica u realnom vremenu.
+          Sistem je osmišljen da prepozna vlasnika i reaguje na njegovo prisustvo kroz unapred definisane komande i pokrete.
+        </p>
+
+        <ul class="project-highlights">
+          <li>Obrada video signala sa kamere</li>
+          <li>Detekcija i prepoznavanje lica</li>
+          <li>Komunikacija između hardverskih komponenti</li>
+          <li>Izvršavanje Python skripti za kontrolu ponašanja robota</li>
+        </ul>
+
+        <p><strong>Tehnologije:</strong> Raspberry Pi, Python, IoT koncepti, embedded sistemi</p>
+
+        <div class="iot-media">
+          <h4>Objave u medijima</h4>
+
+          <details class="media-item">
+            <summary>Telegraf.rs</summary>
+            <div class="media-body">
+              <p>Članak o projektu „Bobi“ – robo pas nastao na FTN u Čačku.</p>
+              <a class="media-btn" target="_blank" rel="noopener"
+                href="https://www.telegraf.rs/hi-tech/zanimljivosti-hi-tech/3798141-bobi-je-prvi-robo-pas-nastao-na-fakultetu-tehnickih-nauka-u-cacku">
+                Pročitaj članak
+              </a>
+            </div>
+          </details>
+
+          <details class="media-item">
+            <summary>Glas Zapadne Srbije</summary>
+            <div class="media-body">
+              <p>Vest o projektu i njegovom predstavljanju.</p>
+              <a class="media-btn" target="_blank" rel="noopener"
+                href="https://glaszapadnesrbije.rs/677602/vest">
+                Pročitaj članak
+              </a>
+            </div>
+          </details>
+
+          <details class="media-item">
+            <summary>B92</summary>
+            <div class="media-body">
+              <p>Lokalna priča o nastanku robo psa, uz fotografije.</p>
+              <a class="media-btn" target="_blank" rel="noopener"
+                href="https://www.b92.net/lokal/cacak/drustvo-prvi-robo-pas-nastao-na-fakultetu-tehnickih-nauka-u-cacku-u-toku-dresura-foto-2447415&version=amp">
+                Pročitaj članak
+              </a>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="project">
+        <h3>Sistem za upravljanje rekreativnim tenisom</h3>
+        <p>
+          Web aplikacija razvijena kao timski projekat, namenjena organizaciji i upravljanju
+          rekreativnim teniskim aktivnostima. Sistem omogućava jednostavno zakazivanje mečeva,
+          evidenciju rezultata i praćenje rang liste igrača.
+        </p>
+
+        <ul class="project-highlights">
+          <li>Korisnička registracija i autentifikacija</li>
+          <li>Upravljanje sesijama i korisničkim profilima</li>
+          <li>Unos i prikaz rezultata</li>
+          <li>Organizacija mečeva kroz MVC arhitekturu</li>
+        </ul>
+
+        <p><strong>Tehnologije:</strong> PHP (MVC arhitektura), JavaScript, MySQL</p>
+      </div>
+
     </div>
+  </section>
 
-    <div class="project">
-      <h3>Beauty &amp; Style – Web aplikacija za zakazivanje termina</h3>
-      <p>
-        Responzivna web aplikacija za pregled usluga i zakazivanje kozmetičkih tretmana.
-        Dizajn je fokusiran na čist UI, jasnu strukturu i dobro korisničko iskustvo.
-        <br><br>
-        Funkcionalnosti: prikaz usluga i cenovnika, forma za kontakt, sekcija sa informacijama, prilagođen prikaz za mobilne uređaje.
-        <br><br>
-        Tehnologije: HTML, CSS, JavaScript.
-      </p>
-
-      <button class="project-btn" onclick="window.open('https://anavukajlovic.github.io/Salon/','_blank')">
-        Prikaži aplikaciju
-      </button>
-      <button class="project-btn" onclick="window.open('https://github.com/AnaVukajlovic/Salon','_blank')">
-        GitHub repozitorijum
-      </button>
-    </div>
-
-    <div class="project">
-      <h3>SrbijaManastiri – Desktop aplikacija (C#)</h3>
-      <p>
-        Desktop aplikacija razvijena u WinForms okruženju sa bazom podataka (SQL Server LocalDB), namenjena edukativnom i informativnom prikazu
-        pravoslavnih manastira u Srbiji. Aplikacija obuhvata module za manastire, ktitore, priče, kalendar i kviz, uz korisničke interakcije.
-        <br><br>
-        Implementirano: autentifikacija i uloge (Admin/Korisnik), kompletne CRUD operacije, rad sa podacima kroz ADO.NET, rad sa multimedijom (galerija).
-        <br><br>
-        Tehnologije: C# (.NET Framework), WinForms, SQL Server (LocalDB), ADO.NET, Visual Studio.
-      </p>
-
-      <button class="project-btn" onclick="window.open('srbija-galerija.html','_blank')">
-        Pregled ekrana
-      </button>
-      <button class="project-btn" onclick="window.open('https://github.com/AnaVukajlovic/SrbijaManastiri','_blank')">
-        GitHub repozitorijum
-      </button>
-    </div>
-   <div class="project">
-    <h3>IoT robot pas</h3>
-      <p>Projekat razvoja interaktivnog IoT robota zasnovanog na Raspberry Pi platformi, sa implementacijom detekcije i prepoznavanja lica u realnom vremenu.
-          Sist em je osmišljen da prepozna vlasnika i reaguje na njegovo prisustvo
-          kroz unapred definisane komande i pokrete.
-          <br><br>
-          Implementirano: obrada video signala sa kamere, detekcija i prepoznavanje lica,
-          komunikacija između hardverskih komponenti, izvršavanje Python skripti
-          za kontrolu ponašanja robota, kao i osnovna IoT komunikacija.
-          <br><br>
-          Tehnologije: Raspberry Pi, Python,  IoT koncepti, embedded sistemi.
-      </p>
-     <div class="iot-media">
-  <h4>Objave u medijima</h4>
-
-  <details class="media-item">
-    <summary>Telegraf.rs</summary>
-    <div class="media-body">
-      <p>Članak o projektu „Bobi“ – robo pas nastao na FTN u Čačku.</p>
-      <a class="media-btn" target="_blank" rel="noopener"
-         href="https://www.telegraf.rs/hi-tech/zanimljivosti-hi-tech/3798141-bobi-je-prvi-robo-pas-nastao-na-fakultetu-tehnickih-nauka-u-cacku">
-        Pročitaj članak
-      </a>
-    </div>
-  </details>
-
-  <details class="media-item">
-    <summary>Glas Zapadne Srbije</summary>
-    <div class="media-body">
-      <p>Vest o projektu i njegovom predstavljanju.</p>
-      <a class="media-btn" target="_blank" rel="noopener"
-         href="https://glaszapadnesrbije.rs/677602/vest">
-        Pročitaj članak
-      </a>
-    </div>
-  </details>
-
-  <details class="media-item">
-    <summary>B92</summary>
-    <div class="media-body">
-      <p>Lokalna priča o nastanku robo psa, uz fotografije.</p>
-      <a class="media-btn" target="_blank" rel="noopener"
-         href="https://www.b92.net/lokal/cacak/drustvo-prvi-robo-pas-nastao-na-fakultetu-tehnickih-nauka-u-cacku-u-toku-dresura-foto-2447415&version=amp">
-        Pročitaj članak
-      </a>
-    </div>
-  </details>
-</div>
-
-  </div>
-
-  <div class="project">
-    <h3>Sistem za upravljanje rekreativnim tenisom</h3>
-    <p>Web aplikacija razvijena kao timski projekat, namenjena organizaciji i
-      upravljanju rekreativnim teniskim aktivnostima.
-      Sistem omogućava jednostavno zakazivanje mečeva, evidenciju rezultata
-      i praćenje rang liste igrača.
-      <br><br>
-      Implementirano: korisnička registracija i autentifikacija,
-      upravljanje sesijama, unos i prikaz rezultata,
-      administracija korisničkih profila,
-      kao i organizacija mečeva kroz MVC arhitekturu radi jasne podele odgovornosti.
-      <br><br>
-      Tehnologije: PHP (MVC arhitektura), JavaScript, MySQL, rad sa relacijama u bazi podataka.
-    </p>
-  </div>
-
-  </div>
-</section>
-
+  <!-- FUTURE -->
   <section id="future">
-  <h2>Planovi</h2>
-  <p>
+    <h2>Planovi i razvoj</h2>
+
     <div class="project">
-    <h3>NemanjiciWebApp – Laravel + HTML/CSS/JavaScript + Ollama LLM</h3>
+      <h3>Dalji razvoj NemanjiciWebApp projekta</h3>
       <p>
-        Web aplikacija posvećena istoriji dinastije Nemanjića i srpskim manastirima,
-        razvijena kao full-stack projekat sa Laravel backend arhitekturom.
-        Sistem omogućava prikaz vladara, hronološku organizaciju sadržaja,
-        detaljne stranice sa istorijskim podacima, kao i pretragu i filtriranje manastira.
-        <br><br>
-        Implementirana je relacijska baza podataka sa modelima i migracijama,
-        REST API komunikacija između backend i frontend sloja,
-        kao i modularna struktura aplikacije (MVC arhitektura).
-        <br><br>
-        Poseban deo projekta predstavlja integracija lokalnog LLM modela
-        putem Ollama servisa, koji omogućava AI pretragu i generisanje odgovora
-        na osnovu postojećih podataka aplikacije.
-        Fokus je na kontroli odgovora modela i smanjenju halucinacija kroz
-        strukturiran prompt dizajn i validaciju podataka.
-        <br><br>
-        Tehnologije: Laravel (PHP), Blade, HTML, CSS, JavaScript, MySQL/SQLite,
-        REST API, Ollama LLM integracija.
+        Planiram dalje unapređenje full-stack Laravel aplikacije posvećene istoriji dinastije Nemanjića
+        i srpskim manastirima, sa fokusom na proširenje baze podataka, poboljšanje korisničkog interfejsa,
+        dodatne funkcionalnosti pretrage i kvalitetniju AI integraciju.
       </p>
-    </p>
 
-</div>
-</section>
+      <ul class="project-highlights">
+        <li>Naprednija pretraga i filtriranje sadržaja</li>
+        <li>Širenje istorijskih i multimedijalnih podataka</li>
+        <li>Dalje unapređenje AI asistenta i kontrole odgovora modela</li>
+        <li>Poboljšanje performansi i organizacije aplikacije</li>
+      </ul>
 
-  
+      <p><strong>Tehnologije:</strong> Laravel, Blade, HTML, CSS, JavaScript, MySQL/SQLite, REST API, Ollama</p>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section id="contact">
     <h2>Kontakt</h2>
@@ -391,46 +441,40 @@
   </section>
 
   <!-- TO TOP -->
-  <button id="toTop">⬆</button>
+  <button id="toTop" aria-label="Vrati na vrh">⬆</button>
+
   <footer>© 2025 Ana Vukajlović. Sva prava zadržana.</footer>
 
   <!-- SCRIPT -->
   <script>
-    // Hamburger menu
     const menuToggle = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
+    const toTopBtn = document.getElementById('toTop');
 
     menuToggle.addEventListener('click', () => {
       navLinks.classList.toggle('active');
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !expanded);
     });
 
-    // Scroll-to-top button
-    const toTopBtn = document.getElementById('toTop');
     window.addEventListener('scroll', () => {
       toTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
     });
+
     toTopBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Smooth scroll
     document.querySelectorAll('nav a').forEach(link => {
       link.addEventListener('click', function(e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) target.scrollIntoView({ behavior: 'smooth' });
         navLinks.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
       });
     });
   </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
