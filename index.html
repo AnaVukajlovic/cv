@@ -3,13 +3,182 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ana Vukajlović | Portfolio</title>
+  <title>Ana Vukajlović | Master inženjer informacionih tehnologija</title>
+  <meta name="description" content="Portfolio Ane Vukajlović – Master inženjer informacionih tehnologija (PHP, Laravel, C#, .NET, JavaScript, SQL, LLM/AI integracije)." />
+
+  <!-- Open Graph / Deljenje linka na mrežama -->
+  <meta property="og:title" content="Ana Vukajlović | Portfolio" />
+  <meta property="og:description" content="Master inženjer informacionih tehnologija – razvoj web i desktop aplikacija, rad sa bazama podataka i AI integracije." />
+  <meta property="og:image" content="https://anavukajlovic.github.io/cv/Images/Capture.PNG" />
+  <meta property="og:url" content="https://anavukajlovic.github.io/cv/" />
+  <meta property="og:type" content="website" />
+
+  <!-- SVG Favicon sa inicijalima AV -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231B365D'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='%23ffffff' font-family='Arial, sans-serif' font-weight='bold' font-size='28'%3EAV%3C/text%3E%3C/svg%3E" />
 
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+  <style>
+    /* Linija napretka skrolovanja na vrhu stranice */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #1B365D, #3b82f6);
+      z-index: 9999;
+      transition: width 0.1s ease-out;
+    }
+
+    /* Aktivna stavka u navigaciji */
+    nav .nav-links a.active-link {
+      position: relative;
+      font-weight: 700;
+    }
+    nav .nav-links a.active-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 100%;
+      height: 2px;
+      background-color: currentColor;
+      border-radius: 2px;
+    }
+
+    /* Dugme za promenu pisma (ĆIR / LAT) */
+    .translit-btn {
+      background: transparent;
+      border: 1.5px solid currentColor;
+      color: inherit;
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: opacity 0.2s ease, transform 0.15s ease;
+    }
+    .translit-btn:hover {
+      opacity: 0.8;
+      transform: translateY(-1px);
+    }
+
+    /* Bedž za live status projekta */
+    .project-header-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 6px;
+    }
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: rgba(16, 185, 129, 0.12);
+      color: #059669;
+    }
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10b981;
+      display: inline-block;
+    }
+
+    /* Raspored dugmića na karticama projekata */
+    .project-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .project-btn.btn-outline {
+      background: transparent;
+      color: #1B365D;
+      border: 1.5px solid #1B365D;
+    }
+    .project-btn.btn-outline:hover {
+      background: #1B365D;
+      color: #ffffff;
+    }
+
+    /* Dugme za brzo kopiranje mejla */
+    .copy-email-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #1B365D;
+      color: #ffffff;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s ease, transform 0.15s ease;
+    }
+    .copy-email-btn:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    /* Toast obaveštenje */
+    #copy-toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: #1B365D;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      z-index: 9999;
+    }
+    #copy-toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Suptilna animacija pojavljivanja elemenata pri skrolovanju */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+  </style>
 </head>
 <body>
+
+  <div id="scroll-progress" aria-hidden="true"></div>
 
   <nav>
     <div class="nav-container">
@@ -21,12 +190,17 @@
 
       <ul class="nav-links">
         <li><a href="#home">Početna</a></li>
+        <li><a href="#featured-projects">Projekti</a></li>
         <li><a href="#about">O meni</a></li>
         <li><a href="#experience">Iskustvo</a></li>
         <li><a href="#skills">Veštine</a></li>
         <li><a href="#courses">Kursevi</a></li>
-        <li><a href="#projects">Projekti</a></li>
         <li><a href="#contact">Kontakt</a></li>
+        <li>
+          <button id="translit-btn" class="translit-btn no-translit" type="button" aria-label="Promeni pismo">
+            ЋИР
+          </button>
+        </li>
       </ul>
     </div>
   </nav>
@@ -36,9 +210,6 @@
       <div class="hero-text" style="text-align: justify;">
         <h1>Ana Vukajlović</h1>
         <h2>Master inženjer informacionih tehnologija</h2>
-        <p>
-          Diplomirani inženjer IT i završni master student na Fakultetu tehničkih nauka u Čačku, fokusirana na razvoj, integraciju i održavanje web i desktop aplikacija (PHP, Laravel, C#, .NET, JavaScript, SQL). Kroz rad na softverskim projektima i stručnu praksu stekla sam praktično iskustvo u radu sa relacionim bazama podataka, platnim sistemima, mrežama i AI integracijama.
-        </p>
 
         <div class="hero-actions">
           <a href="#featured-projects" class="cv-button">Pogledaj projekte</a>
@@ -57,7 +228,10 @@
 
     <div class="projects-grid">
 
-      <div class="project featured-project" style="text-align: justify;">
+      <div class="project featured-project reveal" style="text-align: justify;">
+        <div class="project-header-meta">
+          <span class="live-badge"><span class="live-dot"></span> Live Demo (Render)</span>
+        </div>
         <h3>Pravoslavni Svetionik – Full-Stack Web aplikacija (Master rad)</h3>
         <p>
           Full-stack web aplikacija posvećena digitalizaciji i interaktivnom prikazu srpskog kulturnog i duhovnog nasleđa — pravoslavnih manastira u Srbiji, dinastije Nemanjić kao najvećih zadužbinara i ključnih istorijskih perioda Srbije i SPC. Sistem omogućava pregled detaljnih profila manastira i ktitora, hronološko i tematsko istraživanje istorije, kao i naprednu pretragu i filtriranje sadržaja.
@@ -77,16 +251,19 @@
           <li>Verzionisanje koda na GitHub-u i cloud deployment na Render platformi</li>
         </ul>
 
-        <p><strong>Tehnologije:</strong> PHP, Laravel, Blade, MySQL / SQLite, JavaScript (ES6+), HTML5, CSS3, Ollama, Groq API, GitHub, Render</p>
+        <p><strong>Tehnologije:</strong> <span class="no-translit">PHP, Laravel, Blade, MySQL / SQLite, JavaScript (ES6+), HTML5, CSS3, Ollama, Groq API, GitHub, Render</span></p>
 
         <div class="project-actions">
           <button class="project-btn" onclick="window.open('https://pravoslavni-svetionik.onrender.com','_blank')">
             Prikaži live aplikaciju
           </button>
+          <button class="project-btn btn-outline" onclick="window.open('https://github.com/AnaVukajlovic?tab=repositories','_blank')">
+            <i class="fa-brands fa-github"></i> GitHub kôd
+          </button>
         </div>
       </div>
 
-      <div class="project featured-project" style="text-align: justify;">
+      <div class="project featured-project reveal" style="text-align: justify;">
         <img src="Images/feed.png" 
              alt="SrbijaManastiri aplikacija" 
              style="width:100%; height:220px; object-fit:contain; object-position:center; background:#f8f9fb; border-radius:14px;">
@@ -103,11 +280,14 @@
           <li>Galerija fotografija, istorijske priče, kalendar, kviz znanja i brza pretraga</li>
         </ul>
 
-        <p><strong>Tehnologije:</strong> C#, .NET Framework, WinForms, SQL Server (LocalDB), ADO.NET</p>
+        <p><strong>Tehnologije:</strong> <span class="no-translit">C#, .NET Framework, WinForms, SQL Server (LocalDB), ADO.NET</span></p>
 
         <div class="project-actions">
           <button class="project-btn" onclick="window.open('srbija-galerija.html','_blank')">
             Pregled ekrana
+          </button>
+          <button class="project-btn btn-outline" onclick="window.open('https://github.com/AnaVukajlovic?tab=repositories','_blank')">
+            <i class="fa-brands fa-github"></i> GitHub kôd
           </button>
         </div>
       </div>
@@ -115,7 +295,7 @@
     </div>
   </section>
 
-  <section id="about">
+  <section id="about" class="reveal">
     <h2>O meni</h2>
     <p style="text-align: justify;">
       Diplomirani inženjer informacionih tehnologija i master student na Fakultetu tehničkih nauka u Čačku. Tokom akademskog školovanja, radnog angažovanja i samostalnih projekata stekla sam praktično iskustvo u objektno-orijentisanom programiranju, radu sa relacionim bazama podataka, integraciji elektronskih plaćanja i razvoju web i desktop aplikacija. Najviše radim sa tehnologijama PHP/Laravel, C#/.NET i JavaScript, a posebno me zanima praktična primena i integracija LLM/AI alata u moderna softverska rešenja. Pouzdana sam, analitična i podjednako efikasna u samostalnom i timskom radu.
@@ -126,7 +306,7 @@
     <h2>Radno iskustvo</h2>
 
     <div class="projects-grid">
-      <div class="project" style="text-align: justify;">
+      <div class="project reveal" style="text-align: justify;">
         <h3>Stručna praksa – Naučno-tehnološki park Čačak</h3>
         <p><strong>Period:</strong> Mart 2026 – April 2026</p>
         <ul class="project-highlights" style="text-align: justify;">
@@ -136,7 +316,7 @@
         </ul>
       </div>
 
-      <div class="project" style="text-align: justify;">
+      <div class="project reveal" style="text-align: justify;">
         <h3>Junior softverski inženjer – Docus d.o.o., Čačak</h3>
         <p><strong>Period:</strong> Avgust 2025 – Novembar 2025</p>
         <ul class="project-highlights" style="text-align: justify;">
@@ -144,12 +324,12 @@
           <li>Razvoj C# (.NET) desktop i Android (Java) aplikacija za simulaciju i proveru tokova plaćanja</li>
           <li>Integracija UPT1000F_IP65 platnog terminala i saradnja sa timom na unapređenju stabilnosti sistema</li>
         </ul>
-        <p><strong>Tehnologije:</strong> C# (.NET), Java (Android), Corvus Pay API, UPT1000F_IP65</p>
+        <p><strong>Tehnologije:</strong> <span class="no-translit">C# (.NET), Java (Android), Corvus Pay API, UPT1000F_IP65</span></p>
       </div>
     </div>
   </section>
 
-  <section id="resume">
+  <section id="resume" class="reveal">
     <h2>CV / Biografija</h2>
     <p>Možete preuzeti moju biografiju u PDF formatu:</p>
     <a href="CV/Ana Vukajlović CV.pdf" download class="cv-button">📄 Preuzmi CV</a>
@@ -158,7 +338,7 @@
   <section id="skills">
     <h2>Tehničke veštine</h2>
 
-    <div class="skills-category">
+    <div class="skills-category reveal">
       <h3>Backend i programski jezici</h3>
       <div class="skills-list">
         <div class="skill">PHP (Laravel framework)</div>
@@ -171,31 +351,31 @@
       </div>
     </div>
 
-    <div class="skills-category">
+    <div class="skills-category reveal">
       <h3>Frontend</h3>
       <div class="skills-list">
-        <div class="skill">HTML5 & CSS3</div>
-        <div class="skill">JavaScript (ES6+, DOM, Fetch API)</div>
-        <div class="skill">Tailwind CSS</div>
-        <div class="skill">Bootstrap</div>
+        <div class="skill no-translit">HTML5 & CSS3</div>
+        <div class="skill no-translit">JavaScript (ES6+, DOM, Fetch API)</div>
+        <div class="skill no-translit">Tailwind CSS</div>
+        <div class="skill no-translit">Bootstrap</div>
         <div class="skill">Blade (Laravel šabloni)</div>
-        <div class="skill">Responsive Design</div>
+        <div class="skill no-translit">Responsive Design</div>
       </div>
     </div>
 
-    <div class="skills-category">
+    <div class="skills-category reveal">
       <h3>Baze podataka i razvojni alati</h3>
       <div class="skills-list">
-        <div class="skill">SQL (MySQL, SQLite, SQL Server LocalDB)</div>
+        <div class="skill no-translit">SQL (MySQL, SQLite, SQL Server LocalDB)</div>
         <div class="skill">Git & GitHub (Kontrola verzija)</div>
-        <div class="skill">Docker</div>
-        <div class="skill">Render (Cloud deploy)</div>
-        <div class="skill">Visual Studio / VS Code</div>
+        <div class="skill no-translit">Docker</div>
+        <div class="skill no-translit">Render (Cloud deploy)</div>
+        <div class="skill no-translit">Visual Studio / VS Code</div>
         <div class="skill">Postman (Testiranje API-ja)</div>
       </div>
     </div>
 
-    <div class="skills-category">
+    <div class="skills-category reveal">
       <h3>Sistemi, mreže i IoT</h3>
       <div class="skills-list">
         <div class="skill">Windows (OS i Server)</div>
@@ -203,23 +383,23 @@
         <div class="skill">Mrežni protokoli (TCP/IP, DNS, DHCP, HTTP/S)</div>
         <div class="skill">Mrežna dijagnostika (CMD/Terminal, ping, ipconfig)</div>
         <div class="skill">Priprema radnih stanica i PC hardver</div>
-        <div class="skill">Raspberry Pi (IoT)</div>
+        <div class="skill no-translit">Raspberry Pi (IoT)</div>
       </div>
     </div>
 
-    <div class="skills-category">
+    <div class="skills-category reveal">
       <h3>Kancelarijski i AI alati</h3>
       <div class="skills-list">
         <div class="skill">LLM / AI integracije (Ollama, Groq API)</div>
-        <div class="skill">MS Office 365</div>
-        <div class="skill">G Suite</div>
-        <div class="skill">Figma & Canva</div>
-        <div class="skill">Rufus & AnyDesk</div>
+        <div class="skill no-translit">MS Office 365</div>
+        <div class="skill no-translit">G Suite</div>
+        <div class="skill no-translit">Figma & Canva</div>
+        <div class="skill no-translit">Rufus & AnyDesk</div>
       </div>
     </div>
   </section>
 
-  <section id="soft-skills">
+  <section id="soft-skills" class="reveal">
     <h2>Lične veštine (Soft Skills)</h2>
     <div class="skills-list">
       <div class="skill">Komunikativnost i javni nastup (scenski rad u KC „Bora Đorđević“)</div>
@@ -234,29 +414,29 @@
   <section id="courses">
     <h2>Kursevi i sertifikati</h2>
     <div class="courses-list">
-      <div class="course">
+      <div class="course reveal">
         <i class="fa-solid fa-graduation-cap course-icon"></i>
-        <h3>Frontend Web Development</h3>
-        <p><strong>Organizacija:</strong> IT N&B Group</p>
+        <h3 class="no-translit">Frontend Web Development</h3>
+        <p><strong>Organizacija:</strong> <span class="no-translit">IT N&B Group</span></p>
         <p>Status: <strong>Završen (Decembar 2025)</strong></p>
         <p>
           <a href="CV/Ana_Vukajlovic_Sertifikat.pdf" target="_blank" rel="noopener">📄 Pogledaj sertifikat</a>
         </p>
       </div>
-      <div class="course">
+      <div class="course reveal">
         <i class="fa-solid fa-code course-icon"></i>
-        <h3>Frontend Development Libraries</h3>
-        <p><strong>Platforma:</strong> freeCodeCamp</p>
+        <h3 class="no-translit">Frontend Development Libraries</h3>
+        <p><strong>Platforma:</strong> <span class="no-translit">freeCodeCamp</span></p>
         <p>Status: <strong>U toku</strong></p>
       </div>
-      <div class="course">
+      <div class="course reveal">
         <i class="fa-brands fa-microsoft course-icon"></i>
-        <h3>Foundational C# with Microsoft</h3>
-        <p><strong>Platforma:</strong> Microsoft & freeCodeCamp</p>
+        <h3 class="no-translit">Foundational C# with Microsoft</h3>
+        <p><strong>Platforma:</strong> <span class="no-translit">Microsoft & freeCodeCamp</span></p>
         <p>Status: <strong>U toku</strong></p>
       </div>
 
-      <div class="course" style="grid-column: 1 / -1; width: 100%; text-align: justify;">
+      <div class="course reveal" style="grid-column: 1 / -1; width: 100%; text-align: justify;">
         <i class="fa-solid fa-layer-group course-icon"></i>
         <h3>Kontinuirano usavršavanje i napredni razvoj</h3>
         <p>Status: <strong>U toku (Primena na Master projektu)</strong></p>
@@ -269,12 +449,12 @@
           </li>
           <li style="margin-bottom: 12px;">
             <strong>Bezbednost web aplikacija (OWASP principi):</strong> 
-            <br><small style="color: #888;">Izvor: <em>Laravel Security Science (Stephen Rees-Carter) & OWASP Top 10 Guide</em></small>
+            <br><small style="color: #888;">Izvor: <em><span class="no-translit">Laravel Security Science (Stephen Rees-Carter) & OWASP Top 10 Guide</span></em></small>
             <p style="margin-top: 4px; line-height: 1.5; text-align: justify;">Proučavanje i primena zaštite od najčešćih ranjivosti poput SQL Injection-a, CSRF i XSS napada, uz validaciju zahteva i bezbednu autentifikaciju korisnika.</p>
           </li>
           <li style="margin-bottom: 4px;">
             <strong>UI/UX integracija (Figma u kôd):</strong> 
-            <br><small style="color: #888;">Izvor: <em>Figma YouTube Channel ("Figma for Developers") & Laracasts Frontend serijali</em></small>
+            <br><small style="color: #888;">Izvor: <em><span class="no-translit">Figma YouTube Channel ("Figma for Developers") & Laracasts Frontend</span> serijali</em></small>
             <p style="margin-top: 4px; line-height: 1.5; text-align: justify;">Razumevanje sistema komponenti i layout-a unutar Figme sa fokusom na efikasno i precizno prenošenje dizajna u čist, responzivan frontend kôd.</p>
           </li>
         </ul>
@@ -286,7 +466,7 @@
     <h2>Ostali projekti</h2>
 
     <div class="projects-grid">
-      <div class="project" style="text-align: justify;">
+      <div class="project reveal" style="text-align: justify;">
         <h3>Web aplikacija za rekreativni tenis (Timski projekat)</h3>
         <p>
           Web aplikacija razvijena po MVC arhitekturi, namenjena organizaciji i upravljanju
@@ -298,10 +478,10 @@
           <li>Zakazivanje mečeva i automatsko ažuriranje rang-liste igrača</li>
           <li>Čista podela logike i prikaza kroz MVC arhitekturu</li>
         </ul>
-        <p><strong>Tehnologije:</strong> PHP, MVC, MySQL, JavaScript, HTML5, CSS3</p>
+        <p><strong>Tehnologije:</strong> <span class="no-translit">PHP, MVC, MySQL, JavaScript, HTML5, CSS3</span></p>
       </div>
 
-      <div class="project" style="text-align: justify;">
+      <div class="project reveal" style="text-align: justify;">
         <h3>IoT robot pas „Bobi“</h3>
         <p>
           Hardversko-softverski projekat razvoja interaktivnog IoT robota zasnovanog na Raspberry Pi platformi,
@@ -312,7 +492,7 @@
           <li>Komunikacija hardverskih komponenti i upravljanje kretanjem</li>
           <li>Praktična primena embedded i IoT koncepata</li>
         </ul>
-        <p><strong>Tehnologije:</strong> Python, Raspberry Pi, IoT koncepti, OpenCV</p>
+        <p><strong>Tehnologije:</strong> <span class="no-translit">Python, Raspberry Pi, IoT koncepti, OpenCV</span></p>
         <div class="iot-media">
           <h4>Medijska ispraćenost:</h4>
           <ul style="text-align: justify;">
@@ -322,12 +502,12 @@
         </div>
       </div>
 
-      <div class="project" style="text-align: justify;">
+      <div class="project reveal" style="text-align: justify;">
         <h3>Recepti & Beauty Salon (Frontend projekti)</h3>
         <p>
           Dve responzivne web aplikacije fokusirane na interaktivan korisnički interfejs, manipulaciju DOM-om, dinamičko filtriranje i pretragu sadržaja, sigurnu autentifikaciju i validaciju klijentskih formi.
         </p>
-        <p><strong>Tehnologije:</strong> HTML5, CSS3, JavaScript, Bootstrap</p>
+        <p><strong>Tehnologije:</strong> <span class="no-translit">HTML5, CSS3, JavaScript, Bootstrap</span></p>
         <div class="project-actions">
           <button class="project-btn" onclick="window.open('https://anavukajlovic.github.io/Recepti/','_blank')">Recepti App</button>
           <button class="project-btn" onclick="window.open('https://anavukajlovic.github.io/Salon/','_blank')">Beauty App</button>
@@ -336,13 +516,18 @@
     </div>
   </section>
 
-  <section id="contact">
+  <section id="contact" class="reveal">
     <h2>Kontakt</h2>
-    <a href="tel:0601447818">📞 060 144 7818</a>
-    <a href="mailto:anaavukajlovic@gmail.com">📧 anaavukajlovic@gmail.com</a>
-    <a href="https://www.linkedin.com/in/anavu01" target="_blank" rel="noopener">💼 LinkedIn</a>
-    <a href="https://github.com/AnaVukajlovic" target="_blank" rel="noopener">🐙 GitHub</a>
+    <a href="tel:0601447818" class="no-translit">📞 060 144 7818</a>
+    <a href="mailto:anaavukajlovic@gmail.com" class="no-translit">📧 anaavukajlovic@gmail.com</a>
+    <button type="button" id="copy-email-btn" class="copy-email-btn" aria-label="Kopiraj email adresu">
+      <i class="fa-regular fa-copy"></i> Kopiraj email
+    </button>
+    <a href="https://www.linkedin.com/in/anavu01" target="_blank" rel="noopener" class="no-translit">💼 LinkedIn</a>
+    <a href="https://github.com/AnaVukajlovic" target="_blank" rel="noopener" class="no-translit">🐙 GitHub</a>
   </section>
+
+  <div id="copy-toast" role="status" aria-live="polite"></div>
 
   <button id="toTop" aria-label="Vrati na vrh">⬆</button>
 
@@ -352,6 +537,7 @@
     const menuToggle = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
     const toTopBtn = document.getElementById('toTop');
+    const scrollProgress = document.getElementById('scroll-progress');
 
     menuToggle.addEventListener('click', () => {
       navLinks.classList.toggle('active');
@@ -359,15 +545,42 @@
       menuToggle.setAttribute('aria-expanded', !expanded);
     });
 
-    window.addEventListener('scroll', () => {
-      toTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
-    });
+    // Praćenje skrolovanja (Dugme za vrh, linija napretka i aktivna sekcija)
+    const navAnchors = document.querySelectorAll('nav a[href^="#"]');
+    const trackedSections = Array.from(navAnchors)
+      .map(link => document.querySelector(link.getAttribute('href')))
+      .filter(Boolean);
+
+    function handleScroll() {
+      const scrollY = window.scrollY;
+      toTopBtn.style.display = scrollY > 300 ? 'block' : 'none';
+
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (docHeight > 0 && scrollProgress) {
+        const pct = Math.min(100, Math.max(0, (scrollY / docHeight) * 100));
+        scrollProgress.style.width = pct + '%';
+      }
+
+      let currentId = '';
+      for (const sec of trackedSections) {
+        const top = sec.offsetTop - 140;
+        if (scrollY >= top) {
+          currentId = '#' + sec.id;
+        }
+      }
+      navAnchors.forEach(a => {
+        a.classList.toggle('active-link', a.getAttribute('href') === currentId);
+      });
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
 
     toTopBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    document.querySelectorAll('nav a').forEach(link => {
+    navAnchors.forEach(link => {
       link.addEventListener('click', function(e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
@@ -375,6 +588,230 @@
         navLinks.classList.remove('active');
         menuToggle.setAttribute('aria-expanded', 'false');
       });
+    });
+
+    // Animacija pojavljivanja elemenata pri skrolovanju
+    const revealElements = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08 });
+
+      revealElements.forEach(el => observer.observe(el));
+    } else {
+      revealElements.forEach(el => el.classList.add('visible'));
+    }
+
+    // Kopiranje email adrese jednim klikom
+    const copyEmailBtn = document.getElementById('copy-email-btn');
+    const copyToast = document.getElementById('copy-toast');
+    let toastTimer;
+
+    function showToast(msg) {
+      copyToast.textContent = msg;
+      copyToast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        copyToast.classList.remove('show');
+      }, 2600);
+    }
+
+    if (copyEmailBtn) {
+      copyEmailBtn.addEventListener('click', () => {
+        const email = 'anaavukajlovic@gmail.com';
+        const isCyr = localStorage.getItem('portfolio_script') === 'cyr';
+        const successMsg = isCyr
+          ? 'Емаил адреса је копирана у привремену меморију!'
+          : 'Email adresa je kopirana u privremenu memoriju!';
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(email).then(() => showToast(successMsg));
+        } else {
+          const temp = document.createElement('input');
+          temp.value = email;
+          document.body.appendChild(temp);
+          temp.select();
+          document.execCommand('copy');
+          document.body.removeChild(temp);
+          showToast(successMsg);
+        }
+      });
+    }
+
+    // --- Transliteracija (Latinica <-> Ćirilica) ---
+    const translitBtn = document.getElementById('translit-btn');
+    const originalTextMap = new WeakMap();
+    const textNodes = [];
+
+    function collectTextNodes(root) {
+      const walker = document.createTreeWalker(
+        root,
+        NodeFilter.SHOW_TEXT,
+        {
+          acceptNode(node) {
+            if (!node.nodeValue || !node.nodeValue.trim()) {
+              return NodeFilter.FILTER_REJECT;
+            }
+            const parent = node.parentElement;
+            if (!parent) return NodeFilter.FILTER_REJECT;
+            if (['SCRIPT', 'STYLE', 'NOSCRIPT', 'CODE', 'PRE'].includes(parent.tagName)) {
+              return NodeFilter.FILTER_REJECT;
+            }
+            if (parent.closest('.no-translit')) {
+              return NodeFilter.FILTER_REJECT;
+            }
+            return NodeFilter.FILTER_ACCEPT;
+          }
+        }
+      );
+
+      let current;
+      while ((current = walker.nextNode())) {
+        originalTextMap.set(current, current.nodeValue);
+        textNodes.push(current);
+      }
+    }
+
+    const protectedTermsRegex = new RegExp(
+      '(' + [
+        '\\S+@\\S+',
+        'https?:\\/\\/\\S+',
+        'Telegraf\\.rs',
+        'UPT1000F_IP65',
+        'AI-assisted',
+        'Full-Stack',
+        'Full-stack',
+        'Soft Skills',
+        'Beauty Salon',
+        'Live Demo',
+        'Google Pay',
+        'Corvus Pay',
+        'Groq API',
+        'REST API',
+        'Fetch API',
+        'SQL Server',
+        'LocalDB',
+        'ADO\\.NET',
+        '\\.NET',
+        'WinForms',
+        'JavaScript',
+        'Tailwind CSS',
+        'HTML5',
+        'CSS3',
+        'ES6\\+',
+        'Raspberry Pi',
+        'MS Office',
+        'G Suite',
+        'UI\\/UX',
+        'TCP\\/IP',
+        'HTTP\\/S',
+        'CMD\\/Terminal',
+        'ipconfig',
+        'ping',
+        'Laravel',
+        'Blade',
+        'MySQL',
+        'SQLite',
+        'Ollama',
+        'GitHub',
+        'Git',
+        'Render',
+        'Android',
+        'Java',
+        'Python',
+        'Docker',
+        'Postman',
+        'Windows',
+        'Linux',
+        'Figma',
+        'OpenCV',
+        'Docus',
+        'Injection',
+        'sandbox',
+        'framework',
+        'cloud',
+        'deploy',
+        'deployment',
+        'live',
+        'backend',
+        'frontend',
+        'desktop',
+        'web',
+        'embedded',
+        'layout-a',
+        'Admin',
+        'App',
+        'Email',
+        'email',
+        '\\b(?:PHP|SQL|C#|MVC|CRUD|LLM|AI|API|OOP|OS|DNS|DHCP|PC|IoT|OWASP|CSRF|XSS|DOM|CV|IT|PDF)\\b'
+      ].join('|') + ')',
+      'g'
+    );
+
+    const digraphs = [
+      ['Dž', 'Џ'], ['DŽ', 'Џ'], ['dž', 'џ'],
+      ['Lj', 'Љ'], ['LJ', 'Љ'], ['lj', 'љ'],
+      ['Nj', 'Њ'], ['NJ', 'Њ'], ['nj', 'њ']
+    ];
+
+    const charMap = {
+      'A': 'А', 'B': 'Б', 'V': 'В', 'G': 'Г', 'D': 'Д', 'Đ': 'Ђ',
+      'E': 'Е', 'Ž': 'Ж', 'Z': 'З', 'I': 'И', 'J': 'Ј', 'K': 'К',
+      'L': 'Л', 'M': 'М', 'N': 'Н', 'O': 'О', 'P': 'П', 'R': 'Р',
+      'S': 'С', 'T': 'Т', 'Ć': 'Ћ', 'U': 'У', 'F': 'Ф', 'H': 'Х',
+      'C': 'Ц', 'Č': 'Ч', 'Š': 'Ш',
+      'a': 'а', 'b': 'б', 'v': 'в', 'g': 'г', 'd': 'д', 'đ': 'ђ',
+      'e': 'е', 'ž': 'ж', 'z': 'з', 'i': 'и', 'j': 'ј', 'k': 'к',
+      'l': 'л', 'm': 'м', 'n': 'н', 'o': 'о', 'p': 'п', 'r': 'р',
+      's': 'с', 't': 'т', 'ć': 'ћ', 'u': 'у', 'f': 'ф', 'h': 'х',
+      'c': 'ц', 'č': 'ч', 'š': 'ш'
+    };
+
+    function toCyrillic(text) {
+      const kept = [];
+      let processed = text.replace(protectedTermsRegex, (match) => {
+        const token = `\uE000${kept.length}\uE001`;
+        kept.push(match);
+        return token;
+      });
+
+      for (const [lat, cyr] of digraphs) {
+        processed = processed.split(lat).join(cyr);
+      }
+
+      let result = '';
+      for (let i = 0; i < processed.length; i++) {
+        const ch = processed[i];
+        result += charMap[ch] || ch;
+      }
+
+      return result.replace(/\uE000(\d+)\uE001/g, (_, idx) => kept[Number(idx)]);
+    }
+
+    function applyScript(script) {
+      for (const node of textNodes) {
+        const original = originalTextMap.get(node);
+        node.nodeValue = script === 'cyr' ? toCyrillic(original) : original;
+      }
+      translitBtn.textContent = script === 'cyr' ? 'LAT' : 'ЋИР';
+      localStorage.setItem('portfolio_script', script);
+    }
+
+    collectTextNodes(document.body);
+
+    const savedScript = localStorage.getItem('portfolio_script');
+    if (savedScript === 'cyr') {
+      applyScript('cyr');
+    }
+
+    translitBtn.addEventListener('click', () => {
+      const current = localStorage.getItem('portfolio_script') === 'cyr' ? 'cyr' : 'lat';
+      applyScript(current === 'lat' ? 'cyr' : 'lat');
     });
   </script>
 
