@@ -22,6 +22,7 @@
       <ul class="nav-links">
         <li><a href="#home">Početna</a></li>
         <li><a href="#about">O meni</a></li>
+        <li><a href="#experience">Iskustvo</a></li>
         <li><a href="#skills">Veštine</a></li>
         <li><a href="#courses">Kursevi</a></li>
         <li><a href="#projects">Projekti</a></li>
@@ -34,13 +35,13 @@
     <div class="hero-content">
       <div class="hero-text" style="text-align: justify;">
         <h1>Ana Vukajlović</h1>
-        <h2>Master student Informacionih tehnologija</h2>
+        <h2>Master inženjer informacionih tehnologija</h2>
         <p>
-        Diplomirani inženjer IT i master student na početku karijere. Kroz projekte sam stekla osnovno iskustvo u izradi web i desktop aplikacija. 
-        Otvorena sam za učenje novih tehnologija, rešavanje praktičnih problema i rad u timu gde mogu da doprinesem i kontinuirano se usavršavam.</p>
+          Diplomirani inženjer IT i završni master student na Fakultetu tehničkih nauka u Čačku, fokusirana na razvoj, integraciju i održavanje web i desktop aplikacija (PHP, Laravel, C#, .NET, JavaScript, SQL). Kroz rad na softverskim projektima i stručnu praksu stekla sam praktično iskustvo u radu sa relacionim bazama podataka, platnim sistemima, mrežama i AI integracijama.
+        </p>
 
         <div class="hero-actions">
-          <a href="#projects" class="cv-button">Pogledaj projekte</a>
+          <a href="#featured-projects" class="cv-button">Pogledaj projekte</a>
           <a href="CV/Ana Vukajlović CV.pdf" download class="cv-button secondary-btn">Preuzmi CV</a>
         </div>
       </div>
@@ -57,20 +58,49 @@
     <div class="projects-grid">
 
       <div class="project featured-project" style="text-align: justify;">
-        <img src="Images/feed.png" 
-             alt="SrbijaManastiri aplikacija" 
-             style="width:100%; height:220px; object-fit:contain; object-position:center; background:#f8f9fb; border-radius:14px;">
-        <h3>SrbijaManastiri – Desktop aplikacija (C#)</h3>
+        <h3>Pravoslavni Svetionik – Full-Stack Web aplikacija (Master rad)</h3>
         <p>
-          Edukativna desktop aplikacija za prikaz pravoslavnih manastira u Srbiji,
-          razvijena u WinForms okruženju sa bazom podataka i administracijom sadržaja.
+          Full-stack web aplikacija posvećena digitalizaciji i interaktivnom prikazu srpskog kulturnog i duhovnog nasleđa — pravoslavnih manastira u Srbiji, dinastije Nemanjić kao najvećih zadužbinara i ključnih istorijskih perioda Srbije i SPC. Sistem omogućava pregled detaljnih profila manastira i ktitora, hronološko i tematsko istraživanje istorije, kao i naprednu pretragu i filtriranje sadržaja.
+        </p>
+        <p>
+          Projekat je razvijen u Laravel ekosistemu uz primenu AI-assisted metodologije za generisanje i optimizaciju koda, kao i integraciju <strong>Ollama</strong> (lokalnog LLM modela) i <strong>Groq API</strong> servisa za obradu i strukturiranje istorijskih podataka.
+        </p>
+        <p>
+          <em>Napomena o produkcionoj verziji: Zbog ograničenja resursa na besplatnom cloud paketu, live verzija na Render platformi ne pokreće lokalni LLM model u realnom vremenu, već strukturirane podatke brzo i pouzdano servira direktno iz relacione baze podataka. Pri prvom otvaranju besplatnom serveru može biti potrebno 30–50 sekundi za pokretanje.</em>
         </p>
 
         <ul class="project-highlights" style="text-align: justify;">
-          <li>Autentifikacija i korisničke uloge (Admin/Korisnik)</li>
-          <li>CRUD operacije nad sadržajem aplikacije</li>
-          <li>Rad sa bazom kroz ADO.NET i SQL Server LocalDB</li>
-          <li>Galerija, priče, kalendar, kviz i pretraga sadržaja</li>
+          <li>Kompletna Laravel MVC backend arhitektura i modularni Blade/JS korisnički interfejs</li>
+          <li>Projektovanje relacione baze podataka (povezivanje manastira, ktitora, epoha i istorije)</li>
+          <li>Integracija Ollama i Groq API (LLM) platformi za AI obradu podataka tokom razvoja</li>
+          <li>REST API komunikacija, pretraga i dinamičko filtriranje sadržaja</li>
+          <li>Verzionisanje koda na GitHub-u i cloud deployment na Render platformi</li>
+        </ul>
+
+        <p><strong>Tehnologije:</strong> PHP, Laravel, Blade, MySQL / SQLite, JavaScript (ES6+), HTML5, CSS3, Ollama, Groq API, GitHub, Render</p>
+
+        <div class="project-actions">
+          <button class="project-btn" onclick="window.open('https://pravoslavni-svetionik.onrender.com','_blank')">
+            Prikaži live aplikaciju
+          </button>
+        </div>
+      </div>
+
+      <div class="project featured-project" style="text-align: justify;">
+        <img src="Images/feed.png" 
+             alt="SrbijaManastiri aplikacija" 
+             style="width:100%; height:220px; object-fit:contain; object-position:center; background:#f8f9fb; border-radius:14px;">
+        <h3>SrbijaManastiri – Desktop aplikacija (Diplomski rad)</h3>
+        <p>
+          Objektno-orijentisana edukativna desktop aplikacija za prikaz pravoslavnih manastira u Srbiji,
+          razvijena u WinForms okruženju sa fokusom na stabilnost, sigurnu prijavu korisnika i pouzdan rad sa relacionom bazom podataka.
+        </p>
+
+        <ul class="project-highlights" style="text-align: justify;">
+          <li>Bezbedna autentifikacija i upravljanje korisničkim ulogama (Admin / Korisnik)</li>
+          <li>Kompletne CRUD operacije nad sadržajem aplikacije</li>
+          <li>Rad sa bazom podataka kroz ADO.NET i SQL Server LocalDB</li>
+          <li>Galerija fotografija, istorijske priče, kalendar, kviz znanja i brza pretraga</li>
         </ul>
 
         <p><strong>Tehnologije:</strong> C#, .NET Framework, WinForms, SQL Server (LocalDB), ADO.NET</p>
@@ -82,43 +112,46 @@
         </div>
       </div>
 
-      <div class="project featured-project" style="text-align: justify;">
-        <h3>Pravoslavni Svetionik – Master rad (Laravel + Ollama)</h3>
-        <p>
-          Full-stack web aplikacija posvećena pravoslavnim manastirima u Srbiji, Nemanjićima kao najvećim zadužbinarima i istoriji Srbije i SPC, razvijena kao master rad. Projekat je kreiran uz pomoć AI alata kao deo pedagoškog zahteva, sa ciljem demonstracije implementacije lokalnih jezičkih modela u arhitekturu web sistema. 
-        </p>
-        <p>
-          <em>Napomena: Zbog tehničkih ograničenja besplatnog hostinga, trenutna live verzija aplikacije ne koristi AI u realnom vremenu, već podatke uspešno povlači direktno iz relacione baze podataka.</em>
-        </p>
-
-        <ul class="project-highlights" style="text-align: justify;">
-          <li>Laravel backend arhitektura i MVC šablon</li>
-          <li>Implementacija i upravljanje relacionom bazom podataka</li>
-          <li>Integracija lokalnog Ollama LLM modela za obradu podataka tokom razvoja</li>
-          <li>REST API komunikacija i dinamički frontend</li>
-        </ul>
-
-        <p><strong>Tehnologije:</strong> PHP, Laravel, Blade, MySQL/SQLite, JavaScript, Ollama</p>
-
-        <div class="project-actions">
-          <button class="project-btn" onclick="window.open('https://pravoslavni-svetionik.onrender.com','_blank')">
-            Prikaži live aplikaciju
-          </button>
-        </div>
-      </div>
-
     </div>
   </section>
 
   <section id="about">
     <h2>O meni</h2>
     <p style="text-align: justify;">
-Diplomirani inženjer informacionih tehnologija. Tokom akademskog školovanja i rada na samostalnim projektima, stekla sam praktično iskustvo u objektno-orijentisanom programiranju, radu sa bazama podataka i razvoju web i desktop aplikacija. Trenutno najviše radim sa tehnologijama kao što su PHP/Laravel i C#, a posebno me zanima praktična primena i integracija AI alata u softverska rešenja. Trudim se da pišem uredan kod i da kontinuirano učim kroz konkretne, praktične zadatke.    </p>
+      Diplomirani inženjer informacionih tehnologija i master student na Fakultetu tehničkih nauka u Čačku. Tokom akademskog školovanja, radnog angažovanja i samostalnih projekata stekla sam praktično iskustvo u objektno-orijentisanom programiranju, radu sa relacionim bazama podataka, integraciji elektronskih plaćanja i razvoju web i desktop aplikacija. Najviše radim sa tehnologijama PHP/Laravel, C#/.NET i JavaScript, a posebno me zanima praktična primena i integracija LLM/AI alata u moderna softverska rešenja. Pouzdana sam, analitična i podjednako efikasna u samostalnom i timskom radu.
+    </p>
+  </section>
+
+  <section id="experience">
+    <h2>Radno iskustvo</h2>
+
+    <div class="projects-grid">
+      <div class="project" style="text-align: justify;">
+        <h3>Stručna praksa – Naučno-tehnološki park Čačak</h3>
+        <p><strong>Period:</strong> Mart 2026 – April 2026</p>
+        <ul class="project-highlights" style="text-align: justify;">
+          <li>Revizija i ažuriranje tehničke dokumentacije, provera tačnosti podataka i otklanjanje nedostataka</li>
+          <li>Rad sa računarskim hardverom, priprema radnih stanica i podrška IT infrastrukturi</li>
+          <li>Izrada prezentacija o aktivnostima parka (MS Office) i prateća administrativna podrška</li>
+        </ul>
+      </div>
+
+      <div class="project" style="text-align: justify;">
+        <h3>Junior softverski inženjer – Docus d.o.o., Čačak</h3>
+        <p><strong>Period:</strong> Avgust 2025 – Novembar 2025</p>
+        <ul class="project-highlights" style="text-align: justify;">
+          <li>Implementacija i testiranje Google Pay plaćanja u aplikaciji za parking (Corvus Pay sandbox okruženje)</li>
+          <li>Razvoj C# (.NET) desktop i Android (Java) aplikacija za simulaciju i proveru tokova plaćanja</li>
+          <li>Integracija UPT1000F_IP65 platnog terminala i saradnja sa timom na unapređenju stabilnosti sistema</li>
+        </ul>
+        <p><strong>Tehnologije:</strong> C# (.NET), Java (Android), Corvus Pay API, UPT1000F_IP65</p>
+      </div>
+    </div>
   </section>
 
   <section id="resume">
     <h2>CV / Biografija</h2>
-    <p>Možete preuzeti moj CV ovde:</p>
+    <p>Možete preuzeti moju biografiju u PDF formatu:</p>
     <a href="CV/Ana Vukajlović CV.pdf" download class="cv-button">📄 Preuzmi CV</a>
   </section>
 
@@ -126,22 +159,15 @@ Diplomirani inženjer informacionih tehnologija. Tokom akademskog školovanja i 
     <h2>Tehničke veštine</h2>
 
     <div class="skills-category">
-      <h3>Backend / Arhitektura</h3>
+      <h3>Backend i programski jezici</h3>
       <div class="skills-list">
-        <div class="skill">PHP & Laravel framework</div>
-        <div class="skill">C# (WinForms, osnove ASP.NET)</div>
+        <div class="skill">PHP (Laravel framework)</div>
+        <div class="skill">C# (.NET, WinForms)</div>
+        <div class="skill">Python</div>
+        <div class="skill">Java (Android)</div>
+        <div class="skill">OOP (Objektno-orijentisano programiranje)</div>
         <div class="skill">MVC arhitektura</div>
         <div class="skill">Razvoj REST API servisa</div>
-        <div class="skill">OOP (Objektno-orijentisano programiranje)</div>
-      </div>
-    </div>
-
-    <div class="skills-category">
-      <h3>Baze podataka</h3>
-      <div class="skills-list">
-        <div class="skill">SQL (CRUD operacije, relacije)</div>
-        <div class="skill">MySQL / SQLite</div>
-        <div class="skill">SQL Server (LocalDB)</div>
       </div>
     </div>
 
@@ -150,52 +176,73 @@ Diplomirani inženjer informacionih tehnologija. Tokom akademskog školovanja i 
       <div class="skills-list">
         <div class="skill">HTML5 & CSS3</div>
         <div class="skill">JavaScript (ES6+, DOM, Fetch API)</div>
+        <div class="skill">Tailwind CSS</div>
+        <div class="skill">Bootstrap</div>
         <div class="skill">Blade (Laravel šabloni)</div>
-        <div class="skill">Responzivni dizajn (Bootstrap, Flexbox)</div>
+        <div class="skill">Responsive Design</div>
       </div>
     </div>
 
     <div class="skills-category">
-      <h3>Alati i ostale tehnologije</h3>
+      <h3>Baze podataka i razvojni alati</h3>
       <div class="skills-list">
+        <div class="skill">SQL (MySQL, SQLite, SQL Server LocalDB)</div>
         <div class="skill">Git & GitHub (Kontrola verzija)</div>
-        <div class="skill">Postman (Testiranje API-ja)</div>
-        <div class="skill">Ollama (Integracija lokalnih LLM modela)</div>
+        <div class="skill">Docker</div>
+        <div class="skill">Render (Cloud deploy)</div>
         <div class="skill">Visual Studio / VS Code</div>
-        <div class="skill">Raspberry Pi & IoT (Osnove Pythona)</div>
-        <div class="skill">Rufus (Kreiranje bootabilnih OS medija)</div>
-        <div class="skill">AnyDesk (Udaljeni pristup)</div>
-        <div class="skill">Render (Platforma za Cloud deploy aplikacija)</div>
-        <div class="skill">Figma & Canva (UI/UX dizajn i vizuelno formatiranje)</div>
+        <div class="skill">Postman (Testiranje API-ja)</div>
       </div>
     </div>
-<div class="skills-category">
-      <h3>Sistemi i Mrežna infrastruktura</h3>
+
+    <div class="skills-category">
+      <h3>Sistemi, mreže i IoT</h3>
       <div class="skills-list">
-        <div class="skill">Instalacija i konfiguracija OS-a (Windows, osnove Linuxa)</div>
-        <div class="skill">Priprema radnih stanica (Bootable USB, drajveri, osnovni programi)</div>
-        <div class="skill">Poznavanje PC hardvera i specifikacija komponenti</div>
+        <div class="skill">Windows (OS i Server)</div>
+        <div class="skill">Linux (osnove)</div>
+        <div class="skill">Mrežni protokoli (TCP/IP, DNS, DHCP, HTTP/S)</div>
         <div class="skill">Mrežna dijagnostika (CMD/Terminal, ping, ipconfig)</div>
-        <div class="skill">Razumevanje mrežnih protokola (TCP/IP, DNS, DHCP, HTTP/S)</div>
-        <div class="skill">Osnove administracije Cloud okruženja (Office 365, G Suite)</div>
+        <div class="skill">Priprema radnih stanica i PC hardver</div>
+        <div class="skill">Raspberry Pi (IoT)</div>
+      </div>
+    </div>
+
+    <div class="skills-category">
+      <h3>Kancelarijski i AI alati</h3>
+      <div class="skills-list">
+        <div class="skill">LLM / AI integracije (Ollama, Groq API)</div>
+        <div class="skill">MS Office 365</div>
+        <div class="skill">G Suite</div>
+        <div class="skill">Figma & Canva</div>
+        <div class="skill">Rufus & AnyDesk</div>
       </div>
     </div>
   </section>
 
   <section id="soft-skills">
-    <h2>Lične veštine</h2>
+    <h2>Lične veštine (Soft Skills)</h2>
     <div class="skills-list">
-      <div class="skill">Analitičko razmišljanje</div>
-      <div class="skill">Brza adaptacija na nove tehnologije</div>
+      <div class="skill">Komunikativnost i javni nastup (scenski rad u KC „Bora Đorđević“)</div>
+      <div class="skill">Timski rad i efikasna saradnja</div>
       <div class="skill">Samostalnost u rešavanju problema</div>
-      <div class="skill">Odgovornost i preciznost</div>
-      <div class="skill">Timski rad i komunikacija</div>
+      <div class="skill">Organizovanost, preciznost i odgovornost</div>
+      <div class="skill">Brzo usvajanje novih znanja i alata</div>
+      <div class="skill">Analitičko razmišljanje</div>
     </div>
   </section>
 
   <section id="courses">
     <h2>Kursevi i sertifikati</h2>
     <div class="courses-list">
+      <div class="course">
+        <i class="fa-solid fa-graduation-cap course-icon"></i>
+        <h3>Frontend Web Development</h3>
+        <p><strong>Organizacija:</strong> IT N&B Group</p>
+        <p>Status: <strong>Završen (Decembar 2025)</strong></p>
+        <p>
+          <a href="CV/Ana_Vukajlovic_Sertifikat.pdf" target="_blank" rel="noopener">📄 Pogledaj sertifikat</a>
+        </p>
+      </div>
       <div class="course">
         <i class="fa-solid fa-code course-icon"></i>
         <h3>Frontend Development Libraries</h3>
@@ -205,39 +252,30 @@ Diplomirani inženjer informacionih tehnologija. Tokom akademskog školovanja i 
       <div class="course">
         <i class="fa-brands fa-microsoft course-icon"></i>
         <h3>Foundational C# with Microsoft</h3>
-        <p><strong>Platforma:</strong> Microsoft &amp; freeCodeCamp</p>
+        <p><strong>Platforma:</strong> Microsoft & freeCodeCamp</p>
         <p>Status: <strong>U toku</strong></p>
-      </div>
-      <div class="course">
-        <i class="fa-solid fa-graduation-cap course-icon"></i>
-        <h3>Frontend Web Development</h3>
-        <p><strong>Organizacija:</strong> IT N&amp;B Group</p>
-        <p>Status: <strong>Završen</strong></p>
-        <p>
-          <a href="CV/Ana_Vukajlovic_Sertifikat.pdf" target="_blank" rel="noopener">📄 Pogledaj Sertifikat</a>
-        </p>
       </div>
 
       <div class="course" style="grid-column: 1 / -1; width: 100%; text-align: justify;">
         <i class="fa-solid fa-layer-group course-icon"></i>
-        <h3>Continuous Learning &amp; Advanced Backend Path</h3>
-        <p>Status: <strong>U toku (Implementacija na Master projektu)</strong></p>
+        <h3>Kontinuirano usavršavanje i napredni razvoj</h3>
+        <p>Status: <strong>U toku (Primena na Master projektu)</strong></p>
         
         <ul style="margin-top: 15px; padding-left: 20px; list-style-type: disc; text-align: justify;">
           <li style="margin-bottom: 12px;">
-            <strong>Automatsko testiranje (Pest Framework):</strong> 
-            <br><small style="color: #888;">Izvor: <em>Laracasts ("Pest From Scratch") &amp; Zvanična Pest dokumentacija</em></small>
-            <p style="margin-top: 4px; line-height: 1.5; text-align: justify;">Fokus na pisanje Unit i Feature testova za proveru stabilnosti ruta i validaciju zahteva. Cilj je postizanje sigurnosti koda pre podizanja aplikacije u produkciono okruženje.</p>
+            <strong>AI / LLM integracije i rad sa API-jima (Ollama & Groq API):</strong> 
+            <br><small style="color: #888;">Izvor: <em>Zvanična Ollama i Groq Cloud API dokumentacija</em></small>
+            <p style="margin-top: 4px; line-height: 1.5; text-align: justify;">Povezivanje lokalnih i cloud jezičkih modela sa Laravel backend aplikacijama radi automatske obrade, strukturiranja i obogaćivanja podataka u relacionim bazama.</p>
           </li>
           <li style="margin-bottom: 12px;">
-            <strong>Bezbednost veb aplikacija (OWASP principi):</strong> 
-            <br><small style="color: #888;">Izvor: <em>Laravel Security Science (Stephen Rees-Carter) &amp; OWASP Top 10 Guide</em></small>
-            <p style="margin-top: 4px; line-height: 1.5; text-align: justify;">Proučavanje i primena zaštite od najčešćih ranjivosti poput SQL Injection-a, CSRF i XSS napada. Rad na implementaciji sigurnih tokena za zaštitu API ruta.</p>
+            <strong>Bezbednost web aplikacija (OWASP principi):</strong> 
+            <br><small style="color: #888;">Izvor: <em>Laravel Security Science (Stephen Rees-Carter) & OWASP Top 10 Guide</em></small>
+            <p style="margin-top: 4px; line-height: 1.5; text-align: justify;">Proučavanje i primena zaštite od najčešćih ranjivosti poput SQL Injection-a, CSRF i XSS napada, uz validaciju zahteva i bezbednu autentifikaciju korisnika.</p>
           </li>
           <li style="margin-bottom: 4px;">
             <strong>UI/UX integracija (Figma u kôd):</strong> 
-            <br><small style="color: #888;">Izvor: <em>Figma YouTube Channel ("Figma for Developers") &amp; Laracasts Frontend serijali</em></small>
-            <p style="margin-top: 4px; line-height: 1.5; text-align: justify;">Razumevanje naprednih sistema komponenti i layout-a unutar Figme. Fokus je na efikasnom i preciznom prenošenju dizajna u čist, responzivan frontend kôd.</p>
+            <br><small style="color: #888;">Izvor: <em>Figma YouTube Channel ("Figma for Developers") & Laracasts Frontend serijali</em></small>
+            <p style="margin-top: 4px; line-height: 1.5; text-align: justify;">Razumevanje sistema komponenti i layout-a unutar Figme sa fokusom na efikasno i precizno prenošenje dizajna u čist, responzivan frontend kôd.</p>
           </li>
         </ul>
       </div>
@@ -249,47 +287,47 @@ Diplomirani inženjer informacionih tehnologija. Tokom akademskog školovanja i 
 
     <div class="projects-grid">
       <div class="project" style="text-align: justify;">
-        <h3>Sistem za upravljanje rekreativnim tenisom</h3>
+        <h3>Web aplikacija za rekreativni tenis (Timski projekat)</h3>
         <p>
-          Web aplikacija razvijena kao timski projekat, namenjena organizaciji i upravljanju
+          Web aplikacija razvijena po MVC arhitekturi, namenjena organizaciji i upravljanju
           rekreativnim teniskim aktivnostima. Sistem omogućava jednostavno zakazivanje mečeva,
-          evidenciju rezultata i praćenje rang liste igrača.
+          unos i evidenciju rezultata i praćenje rang-liste igrača.
         </p>
         <ul class="project-highlights" style="text-align: justify;">
-          <li>Korisnička registracija i autentifikacija</li>
-          <li>Upravljanje sesijama i korisničkim profilima</li>
-          <li>Unos i prikaz rezultata kroz MVC arhitekturu</li>
+          <li>Korisnička registracija, autentifikacija i upravljanje profilima</li>
+          <li>Zakazivanje mečeva i automatsko ažuriranje rang-liste igrača</li>
+          <li>Čista podela logike i prikaza kroz MVC arhitekturu</li>
         </ul>
-        <p><strong>Tehnologije:</strong> PHP, JavaScript, MySQL</p>
+        <p><strong>Tehnologije:</strong> PHP, MVC, MySQL, JavaScript, HTML5, CSS3</p>
       </div>
 
       <div class="project" style="text-align: justify;">
-        <h3>IoT robot pas ("Bobi")</h3>
+        <h3>IoT robot pas „Bobi“</h3>
         <p>
-          Projekat razvoja interaktivnog IoT robota zasnovanog na Raspberry Pi platformi,
+          Hardversko-softverski projekat razvoja interaktivnog IoT robota zasnovanog na Raspberry Pi platformi,
           sa implementacijom detekcije i prepoznavanja lica u realnom vremenu uz pomoć Python skripti.
         </p>
         <ul class="project-highlights" style="text-align: justify;">
-          <li>Obrada video signala sa kamere i prepoznavanje lica</li>
-          <li>Komunikacija hardverskih komponenti i kontrola pokreta</li>
-          <li>Praktična primena embedded sistema</li>
+          <li>Obrada video signala sa kamere i prepoznavanje lica u realnom vremenu</li>
+          <li>Komunikacija hardverskih komponenti i upravljanje kretanjem</li>
+          <li>Praktična primena embedded i IoT koncepata</li>
         </ul>
-        <p><strong>Tehnologije:</strong> Raspberry Pi, Python, OpenCV</p>
+        <p><strong>Tehnologije:</strong> Python, Raspberry Pi, IoT koncepti, OpenCV</p>
         <div class="iot-media">
           <h4>Medijska ispraćenost:</h4>
           <ul style="text-align: justify;">
-            <li><a href="https://www.telegraf.rs/hi-tech/zanimljivosti-hi-tech/3798141-bobi-je-prvi-robo-pas-nastao-na-fakultetu-tehnickih-nauka-u-cacku" target="_blank">Telegraf.rs članak</a></li>
-            <li><a href="https://www.b92.net/lokal/cacak/drustvo-prvi-robo-pas-nastao-na-fakultetu-tehnickih-nauka-u-cacku-u-toku-dresura-foto-2447415&version=amp" target="_blank">B92 članak</a></li>
+            <li><a href="https://www.telegraf.rs/hi-tech/zanimljivosti-hi-tech/3798141-bobi-je-prvi-robo-pas-nastao-na-fakultetu-tehnickih-nauka-u-cacku" target="_blank" rel="noopener">Telegraf.rs članak</a></li>
+            <li><a href="https://www.b92.net/lokal/cacak/drustvo-prvi-robo-pas-nastao-na-fakultetu-tehnickih-nauka-u-cacku-u-toku-dresura-foto-2447415&version=amp" target="_blank" rel="noopener">B92 članak</a></li>
           </ul>
         </div>
       </div>
 
       <div class="project" style="text-align: justify;">
-        <h3>Recepti &amp; Beauty Salon (Frontend projekti)</h3>
+        <h3>Recepti & Beauty Salon (Frontend projekti)</h3>
         <p>
-          Dve responzivne web aplikacije kreirane u cilju usavršavanja UI/UX dizajna i manipulacije DOM-om. Fokusirane su na pretragu, filtriranje sadržaja i prezentaciju usluga.
+          Dve responzivne web aplikacije fokusirane na interaktivan korisnički interfejs, manipulaciju DOM-om, dinamičko filtriranje i pretragu sadržaja, sigurnu autentifikaciju i validaciju klijentskih formi.
         </p>
-        <p><strong>Tehnologije:</strong> HTML, CSS, JavaScript, Bootstrap</p>
+        <p><strong>Tehnologije:</strong> HTML5, CSS3, JavaScript, Bootstrap</p>
         <div class="project-actions">
           <button class="project-btn" onclick="window.open('https://anavukajlovic.github.io/Recepti/','_blank')">Recepti App</button>
           <button class="project-btn" onclick="window.open('https://anavukajlovic.github.io/Salon/','_blank')">Beauty App</button>
@@ -297,7 +335,6 @@ Diplomirani inženjer informacionih tehnologija. Tokom akademskog školovanja i 
       </div>
     </div>
   </section>
-
 
   <section id="contact">
     <h2>Kontakt</h2>
